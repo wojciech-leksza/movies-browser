@@ -1,8 +1,12 @@
 import { Normalize } from "styled-normalize";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 const App = () => {
   return (
-    <Normalize />
+    <ThemeProvider theme={theme}>
+      <Normalize />
+    </ThemeProvider>
   )
 };
 
