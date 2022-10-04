@@ -15,8 +15,7 @@ export const theme = {
   },
   breakpoints: {
     mobileMax: 767,
-    tabletVerticalMax: 991,
-    tabletHorizontalMax: 1199,
+    tabletMax: 1199,
   },
   borderRadiusSmall: "5px",
   boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
