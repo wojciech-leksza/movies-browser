@@ -17,6 +17,13 @@ export const theme = {
     mobileMax: 767,
     tabletMax: 1199,
   },
+  fontSizes: {
+    larger: "36px",
+    large: "22px",
+    medium: "16px",
+    small: "13px",
+    verySmall: "10px",
+  },
   borderRadiusSmall: "5px",
   boxShadow: "0px 4px 12px rgba(186, 199, 213, 0.5)",
 };
