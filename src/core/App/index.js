@@ -2,7 +2,8 @@ import { Normalize } from "styled-normalize";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
-import { Container } from "./styled";
+import { Container } from "../../common/styled";
+import MoviesPage from "../../features/MoviesPage";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
       <Normalize />
       <GlobalStyle />
       <Container>
-        
+        <MoviesPage/>
       </Container>
     </ThemeProvider>
   )
