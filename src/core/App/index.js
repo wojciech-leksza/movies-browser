@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
 import Navigation from "../../common/Navigation";
+import Pagination from "../../common/Pagination";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Normalize />
       <GlobalStyle />
       <Navigation />
+      <Pagination />
     </ThemeProvider>
   )
 };
