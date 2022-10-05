@@ -1,14 +1,13 @@
 import { Title } from "../../common/styled";
-import { Card, Wrapper } from "./styled";
+import { Wrapper } from "./styled";
+import MovieCard from "./MovieCard";
 
 const MoviesPage = () => {
   return (
     <>
-    <Title>Popular Movies</Title>
+      <Title>Popular Movies</Title>
       <Wrapper>
-        <Card>
-          
-        </Card>
+        <MovieCard />
       </Wrapper>
     </>
   );
