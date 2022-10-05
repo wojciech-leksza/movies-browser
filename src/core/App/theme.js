@@ -12,6 +12,7 @@ export const theme = {
     blue: "#0044CC",
     snuff: "#DDDDEE",
     yellow: "#FCD420",
+    silver: "#C4C4C4",
   },
   breakpoints: {
     mobileMax: 767,
@@ -21,7 +22,8 @@ export const theme = {
     larger: "36px",
     large: "22px",
     medium: "16px",
-    small: "13px",
+    small: "14px",
+    smaller: "13px",
     verySmall: "10px",
   },
   borderRadiusSmall: "5px",
