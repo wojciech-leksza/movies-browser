@@ -12,4 +12,9 @@ export const Title = styled.h1`
     font-weight: 600;
     line-height: 1.2;
     margin: 56px 0 0 0;
+
+    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        margin-top: 24px;
+        font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileLarger};
+    };
 `;

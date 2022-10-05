@@ -7,6 +7,10 @@ const MoviesPage = () => {
     <Container title="Popular Movies">
       <Wrapper>
         <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
+        <MovieCard />
       </Wrapper>
     </Container>
   );
