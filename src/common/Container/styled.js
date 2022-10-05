@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+export const Wrapper = styled.main`
     max-width: 1400px;
     padding: 16px;
     margin: auto;
