@@ -1,9 +1,25 @@
-import { Card, Content, MovieTitle, Poster, Rate, Rating, RatingStar, Tag, TagsList, Votes, YearOfProduction } from "./styled";
+import {
+    Card,
+    Content,
+    MovieTitle,
+    NoPosterIcon,
+    Poster, 
+    PosterImage,
+    Rate,
+    Rating,
+    RatingStar,
+    Tag,
+    TagsList,
+    Votes,
+    YearOfProduction
+} from "./styled";
 import poster from "./poster.jpg"
 
 const MovieCard = () => (
     <Card>
-        <Poster src={poster}/>
+        <Poster>
+            {poster ? <PosterImage src={poster} /> : <NoPosterIcon />}
+        </Poster>
         <Content>
             <MovieTitle>Mulan</MovieTitle>
             <YearOfProduction>2020</YearOfProduction>

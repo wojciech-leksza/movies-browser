@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
+import { ReactComponent as Video } from "./Video.svg";
 
 export const Card = styled.article`
     display: grid;
@@ -19,14 +20,33 @@ export const Card = styled.article`
     };
 `;
 
-export const Poster = styled.img`
+export const Poster = styled.div`
     width: 100%;
-    height: auto;
+    min-height: 434px;
     border-radius: ${({ theme: { borderRadiusSmall } }) => borderRadiusSmall};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
     align-content: center;
     justify-content: center;
+
+    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        min-height: 169px;
+    }; 
+`;
+
+export const PosterImage = styled.img`
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+`;
+
+export const NoPosterIcon = styled(Video)`
+    height: auto;
+    width: 64px;
+
+    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        width: 38px;
+    }; 
 `;
 
 export const Content = styled.div`
