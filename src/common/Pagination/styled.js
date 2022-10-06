@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as VectorLeft } from "./left_arrow.svg";
 import { ReactComponent as VectorRight } from "./right_arrow.svg";
-import { ReactComponent as VectorLeftMobile } from "./left_arrow.svg";
-import { ReactComponent as VectorRightMobile } from "./right_arrow.svg";
 
 export const Wrapper = styled.footer`
   display: flex;
@@ -72,7 +70,7 @@ export const RightArrow = styled(VectorRight)`
   margin: 0 8px;
 `;
 
-export const LeftArrowMobile = styled(VectorLeftMobile)`
+export const LeftArrowMobile = styled(VectorLeft)`
   display: none;
   
   @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
@@ -82,7 +80,7 @@ export const LeftArrowMobile = styled(VectorLeftMobile)`
   }
 `;
 
-export const RightArrowMobile = styled(VectorRightMobile)`
+export const RightArrowMobile = styled(VectorRight)`
   display: none;
   
   @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
