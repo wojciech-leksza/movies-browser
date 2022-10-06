@@ -36,7 +36,7 @@ export const StyledIcon = styled(SearchIcon)`
 export const Input = styled.input`
   width: 368px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   border: none;
 
   &:focus, active {
@@ -48,7 +48,7 @@ export const Input = styled.input`
   }
 
   @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
   }
 `;
 
