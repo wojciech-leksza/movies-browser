@@ -1,4 +1,5 @@
-import { Container, Title, StyledIco, SubTitle, Button } from "./styled";
+import { movies } from "../../core/App/routes";
+import { Container, Title, StyledIco, SubTitle, Button, Content } from "./styled";
 
 const ErrorPage = () => {
   return (
@@ -6,7 +7,7 @@ const ErrorPage = () => {
       <StyledIco/>
       <Title>Ooops! Something went wrong...</Title>
       <SubTitle>Please check your network connection<br />and try again</SubTitle>
-      <Button>Back to home page</Button>
+      <Button to={movies}><Content>Back to home page</Content></Button>
     </Container>
   )
 };

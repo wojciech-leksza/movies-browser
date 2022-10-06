@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as ErrorElement } from './img/ErrorElement.svg';
 
@@ -61,9 +62,8 @@ export const SubTitle = styled.h2`
     }
 `
 
-export const Button = styled.button`
-    width: 180px;
-    height: 50px;
+export const Button = styled(NavLink)`
+    text-decoration:none;
     border-radius: 5px;
     color:${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.blue};
@@ -82,14 +82,22 @@ export const Button = styled.button`
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         border-radius: 4px;
         font-size: 9px;
-        width: 120px;
-        height: 35px;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         border-radius: 3px;
         font-size: 5px;
-        width: 70px;
-        height: 20px;
+    }
+`
+
+export const Content = styled.div`
+    margin:16px 24px;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
+        margin:8px 16px;
+    }
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
+        margin:1px 8px;
     }
 `

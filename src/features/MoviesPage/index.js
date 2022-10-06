@@ -7,7 +7,7 @@ import Navigation from "../../common/Navigation";
 const MoviesPage = () => {
   return (
     <>
-    <Navigation placeholder="Search for movies..."/>
+      <Navigation />
       <Container title="Popular Movies">
         <Wrapper>
           <MovieCard />

@@ -1,3 +1,4 @@
+import { movies, people } from "../../core/App/routes";
 import SearchBar from "./SearchBar";
 import {
   Header,
@@ -12,7 +13,7 @@ import {
   StyledNavLink,
 } from "./styled";
 
-const Navigation = ({ placeholder }) => {
+const Navigation = () => {
   return (
     <>
       <Header>
@@ -28,18 +29,18 @@ const Navigation = ({ placeholder }) => {
             </StyledLogo>
             <NavList>
               <NavListItem>
-                <StyledNavLink to="/movies">
+                <StyledNavLink to={movies}>
                   movies
                 </StyledNavLink>
               </NavListItem>
               <NavListItem>
-                <StyledNavLink to="/persons">
+                <StyledNavLink to={people}>
                   people
                 </StyledNavLink>
               </NavListItem>
             </NavList>
           </Nav>
-          <SearchBar placeholder={placeholder} />
+          <SearchBar/>
         </Wrapper>
       </Header>
     </>
