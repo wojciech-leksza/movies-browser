@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as VideoIcon } from "./icon_video.svg";
 
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
   max-width: 1368px;
   color: ${({ theme }) => theme.colors.white};
 
-  @media(max-width: ${({theme}) => theme.breakpoints.tabletMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -34,7 +35,7 @@ export const StyledLogo = styled.div`
 export const StyledIcon = styled(VideoIcon)`
   width: 40px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     width: 18px
   }
 `;
@@ -47,7 +48,7 @@ export const Title = styled.h1`
   text-transform: capitalize;
   margin-left: 12px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-size: 12px;
     letter-spacing: -0.5px;
   }
@@ -61,7 +62,7 @@ export const NavList = styled.ul`
   font-weight: 600;
   font-size: 14px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-size: 12px;
     margin-left: 24px;
   }
@@ -70,7 +71,7 @@ export const NavList = styled.ul`
 export const NavListItem = styled.li`
   padding: 8px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     padding: 8px 12px;
   }
 `;
@@ -86,12 +87,21 @@ export const StyledLink = styled.a`
   }
 `;
 
-export const StyledNavLink = styled(StyledLink)`
+export const StyledNavLink = styled(NavLink)`
+color: ${({ theme }) => theme.colors.white};
+  text-decoration: none;
+  transition: opacity 0.5s;
   padding: 8px 16px;
   text-transform: uppercase;
 
-  &:active {
+  &.active {
     border: 1px solid ${({ theme }) => theme.colors.white};
     border-radius: 24px;
   }
+
+  &:hover {
+    opacity: 50%;
+    cursor: pointer;
+  }
+  
 `;

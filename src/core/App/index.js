@@ -1,19 +1,30 @@
+import { createHashRouter, createRoutesFromElements, Navigate, Route, RouterProvider, } from "react-router-dom";
 import { Normalize } from "styled-normalize";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
-import Navigation from "../../common/Navigation";
-import Pagination from "../../common/Pagination";
 import MoviesPage from "../../features/MoviesPage";
+import PersonsPage from "../../features/PersonsPage";
+import Page404 from "../../features/Page404";
+
+const router = createHashRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="movies" element={<MoviesPage />} />
+      <Route path="persons" element={<PersonsPage />} />
+      <Route path="/" element={<Navigate replace to="/movies" />} errorElement={<Page404 />} />
+    </>
+  )
+);
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyle />
-      <Navigation />
-      <MoviesPage />
-      <Pagination />
+      <RouterProvider
+        router={router}
+      />
     </ThemeProvider>
   )
 };

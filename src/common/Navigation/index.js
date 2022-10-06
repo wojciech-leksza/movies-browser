@@ -7,14 +7,14 @@ import {
   StyledIcon,
   Title,
   StyledLink,
-  ListWrapper,
   NavList,
   NavListItem,
-  StyledNavLink
+  StyledNavLink,
 } from "./styled";
 
 const Navigation = () => {
   return (
+   <>
     <Header>
       <Wrapper>
         <Nav>
@@ -26,22 +26,23 @@ const Navigation = () => {
               </StyledLink>
             </Title>
           </StyledLogo>
-            <NavList>
-              <NavListItem>
-                <StyledNavLink>
-                  movies
-                </StyledNavLink>
-              </NavListItem>
-              <NavListItem>
-                <StyledNavLink>
-                  people
-                </StyledNavLink>
-              </NavListItem>
-            </NavList>
+          <NavList>
+            <NavListItem>
+              <StyledNavLink to="/movies">
+                movies
+              </StyledNavLink>
+            </NavListItem>
+            <NavListItem>
+              <StyledNavLink to="/persons">
+                people
+              </StyledNavLink>
+            </NavListItem>
+          </NavList>
         </Nav>
         <SearchBar />
       </Wrapper>
     </Header>
+   </>
   )
 };
 
