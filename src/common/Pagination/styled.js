@@ -26,7 +26,7 @@ export const Button = styled.button`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin: 0 8px;
+    margin: 0 6px;
   }
 `;
 
@@ -48,6 +48,10 @@ export const Paragraph = styled.p`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0;
+  }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    text-align: center;
   }
 `;
 
