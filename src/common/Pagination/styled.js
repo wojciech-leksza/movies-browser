@@ -9,7 +9,7 @@ export const Wrapper = styled.footer`
   margin-top: 40px;
 `;
 
-export const ButtonLink = styled.button`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   background: ${({ theme }) => theme.colors.grey};

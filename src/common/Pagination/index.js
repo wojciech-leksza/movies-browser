@@ -1,5 +1,5 @@
 import {
-  ButtonLink,
+  Button,
   Wrapper,
   Text,
   Paragraph,
@@ -13,27 +13,27 @@ import {
 const Pagination = () => {
   return (
     <Wrapper>
-      <ButtonLink>
+      <Button>
         <LeftArrow />
         <LeftArrowMobile />
         <Text>First</Text>
-      </ButtonLink>
-      <ButtonLink>
+      </Button>
+      <Button>
         <LeftArrow />
         <Text>Previous</Text>
-      </ButtonLink>
+      </Button>
       <Paragraph>
         Page <PageNumber>1</PageNumber> of <PageNumber>500</PageNumber>
       </Paragraph>
-      <ButtonLink>
+      <Button>
         <Text>Next</Text>
         <RightArrow />
-      </ButtonLink>
-      <ButtonLink>
+      </Button>
+      <Button>
         <Text>Last</Text>
         <RightArrowMobile />
         <RightArrow />
-      </ButtonLink>
+      </Button>
     </Wrapper>
   )
 };
