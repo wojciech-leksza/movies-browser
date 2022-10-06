@@ -26,7 +26,6 @@ const Navigation = () => {
               </StyledLink>
             </Title>
           </StyledLogo>
-          <ListWrapper>
             <NavList>
               <NavListItem>
                 <StyledNavLink>
@@ -39,7 +38,6 @@ const Navigation = () => {
                 </StyledNavLink>
               </NavListItem>
             </NavList>
-          </ListWrapper>
         </Nav>
         <Search />
       </Wrapper>

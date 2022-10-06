@@ -5,7 +5,6 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   background: ${({ theme }) => theme.colors.woodSmoke};
-  width: 100%;
   padding: 26px 20px;
 `;
 
@@ -54,15 +53,8 @@ export const Title = styled.h1`
   }
 `;
 
-export const ListWrapper = styled.div`
-  margin-left: 80px;
-
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
-    margin-left: 24px;
-  }
-`;
-
 export const NavList = styled.ul`
+  margin-left: 80px;
   display: flex;
   padding: 0;
   list-style: none;
@@ -71,6 +63,7 @@ export const NavList = styled.ul`
 
   @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
     font-size: 12px;
+    margin-left: 24px;
   }
 `;
 
