@@ -23,7 +23,7 @@ const Pagination = () => {
         <Text>Previous</Text>
       </Button>
       <Paragraph>
-        Page <PageNumber>1</PageNumber> of <PageNumber>500</PageNumber>
+        Page&nbsp;<PageNumber>1</PageNumber> of&nbsp;<PageNumber>500</PageNumber>
       </Paragraph>
       <Button>
         <Text>Next</Text>
