@@ -7,7 +7,6 @@ import {
   StyledIcon,
   Title,
   StyledLink,
-  ListWrapper,
   NavList,
   NavListItem,
   StyledNavLink
