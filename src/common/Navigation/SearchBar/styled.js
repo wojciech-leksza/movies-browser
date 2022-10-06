@@ -18,6 +18,10 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Label = styled.label`
+  display: flex;
+`;
+
 export const StyledIcon = styled(SearchIcon)`
   width: 18px;
   margin-right: 18px;

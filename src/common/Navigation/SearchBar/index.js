@@ -1,14 +1,14 @@
-import { Input, StyledIcon, Wrapper } from "./styled";
+import { Input, StyledIcon, Wrapper, Label } from "./styled";
 
 const SearchBar = () => {
   return (
     <Wrapper>
-      <label>
+      <Label>
         <StyledIcon />
         <Input
           placeholder="Search for movies..."
         />
-      </label>
+      </Label>
     </Wrapper>
   )
 };
