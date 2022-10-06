@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   max-width: 1368px;
   color: ${({ theme }) => theme.colors.white};
 
-  @media(max-width: ${({theme}) => theme.breakpoints.tabletMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -34,21 +34,21 @@ export const StyledLogo = styled.div`
 export const StyledIcon = styled(VideoIcon)`
   width: 40px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     width: 18px
   }
 `;
 
 export const Title = styled.h1`
   font-weight: 500;
-  font-size: 24px;
+  font-size: ${({theme}) => theme.fontSizes.large};
   margin: 0;
   letter-spacing: -1.5px;
   text-transform: capitalize;
   margin-left: 12px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
-    font-size: 12px;
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: ${({theme}) => theme.fontSizes.mobileMedium};
     letter-spacing: -0.5px;
   }
 `;
@@ -59,19 +59,23 @@ export const NavList = styled.ul`
   padding: 0;
   list-style: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.small};
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
-    font-size: 12px;
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-size: ${({theme}) => theme.fontSizes.mobileMedium};
     margin-left: 24px;
   }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    margin-left: 0;
+  } 
 `;
 
 export const NavListItem = styled.li`
   padding: 8px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
-    padding: 8px 12px;
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    padding: 8px 6px;
   }
 `;
 
@@ -87,7 +91,7 @@ export const StyledLink = styled.a`
 `;
 
 export const StyledNavLink = styled(StyledLink)`
-  padding: 8px 16px;
+  padding: 8px 12px;
   text-transform: uppercase;
 
   &:active {
