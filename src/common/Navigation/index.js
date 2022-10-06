@@ -12,37 +12,37 @@ import {
   StyledNavLink,
 } from "./styled";
 
-const Navigation = () => {
+const Navigation = ({ placeholder }) => {
   return (
-   <>
-    <Header>
-      <Wrapper>
-        <Nav>
-          <StyledLogo>
-            <StyledIcon />
-            <Title>
-              <StyledLink>
-                movies browser
-              </StyledLink>
-            </Title>
-          </StyledLogo>
-          <NavList>
-            <NavListItem>
-              <StyledNavLink to="/movies">
-                movies
-              </StyledNavLink>
-            </NavListItem>
-            <NavListItem>
-              <StyledNavLink to="/persons">
-                people
-              </StyledNavLink>
-            </NavListItem>
-          </NavList>
-        </Nav>
-        <SearchBar />
-      </Wrapper>
-    </Header>
-   </>
+    <>
+      <Header>
+        <Wrapper>
+          <Nav>
+            <StyledLogo>
+              <StyledIcon />
+              <Title>
+                <StyledLink>
+                  movies browser
+                </StyledLink>
+              </Title>
+            </StyledLogo>
+            <NavList>
+              <NavListItem>
+                <StyledNavLink to="/movies">
+                  movies
+                </StyledNavLink>
+              </NavListItem>
+              <NavListItem>
+                <StyledNavLink to="/persons">
+                  people
+                </StyledNavLink>
+              </NavListItem>
+            </NavList>
+          </Nav>
+          <SearchBar placeholder={placeholder} />
+        </Wrapper>
+      </Header>
+    </>
   )
 };
 

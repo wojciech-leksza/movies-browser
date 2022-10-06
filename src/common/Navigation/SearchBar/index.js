@@ -1,12 +1,12 @@
 import { Input, StyledIcon, Wrapper, Label } from "./styled";
 
-const SearchBar = () => {
+const SearchBar = ({ placeholder }) => {
   return (
     <Wrapper>
       <Label>
         <StyledIcon />
         <Input
-          placeholder="Search for movies..."
+          placeholder={placeholder}
         />
       </Label>
     </Wrapper>

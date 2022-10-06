@@ -2,7 +2,7 @@ import Navigation from "../../common/Navigation";
 
 const PersonsPage = () => {
     return (
-        <Navigation/>
+        <Navigation placeholder={"Search for people..."}/>
     )
 };
 

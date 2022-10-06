@@ -10,8 +10,8 @@ import Page404 from "../../features/Page404";
 const router = createHashRouter(
   createRoutesFromElements(
     <>
-      <Route path="movies" element={<MoviesPage />} />
       <Route path="persons" element={<PersonsPage />} />
+      <Route path="movies" element={<MoviesPage />} />
       <Route path="/" element={<Navigate replace to="/movies" />} errorElement={<Page404 />} />
     </>
   )
