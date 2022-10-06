@@ -1,4 +1,4 @@
-import Search from "./Search";
+import SearchBar from "./SearchBar";
 import {
   Header,
   Wrapper,
@@ -39,7 +39,7 @@ const Navigation = () => {
               </NavListItem>
             </NavList>
         </Nav>
-        <Search />
+        <SearchBar />
       </Wrapper>
     </Header>
   )

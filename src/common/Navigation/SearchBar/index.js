@@ -1,6 +1,6 @@
 import { Input, StyledIcon, Wrapper } from "./styled";
 
-const Search = () => {
+const SearchBar = () => {
   return (
     <Wrapper>
       <StyledIcon />
@@ -11,4 +11,4 @@ const Search = () => {
   )
 };
 
-export default Search;
+export default SearchBar;
