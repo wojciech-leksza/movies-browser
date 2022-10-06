@@ -1,13 +1,12 @@
 import { Container, Title, Element } from "./styled";
-import LoadingElement from './img/loadingElement.svg';
 
-const SearchLoadingPage = () => {
+const LoadingPage = () => {
     return (
         <Container>
             <Title>Search results for “{"Mulan"}”</Title>
-            <Element src={LoadingElement} />
+            <Element/>
         </Container>
     )
 };
 
-export default SearchLoadingPage;
+export default LoadingPage;

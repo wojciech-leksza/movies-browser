@@ -1,24 +1,27 @@
 import styled from "styled-components";
+import { ReactComponent as ErrorElement } from './img/ErrorElement.svg';
 
 export const Container = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
 `
 
-export const Element = styled.img`
+export const StyledIco = styled(ErrorElement)`
     margin: 120px 0px 40px;
     width: 120px;
+    height:auto;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         width: 80px;
+        height:auto;
         margin: 80px 0px 20px;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         width: 40px;
+        height:auto;
         margin: 40px 0px 10px;
     }
 `

@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { ReactComponent as loadingElement } from './img/loadingElement.svg';
 
 export const Container = styled.main`
     display: flex;
@@ -29,7 +30,7 @@ export const Title = styled.h1`
     }
 `
 
-const fadeIn = keyframes`
+const rotate = keyframes`
   0% {
     transform: rotate(0deg);
   }
@@ -38,10 +39,10 @@ const fadeIn = keyframes`
   }
 `
 
-export const Element = styled.img`
+export const Element = styled(loadingElement)`
     width: 91px;
     height: 91px;
-    animation: 2s ${fadeIn} linear infinite;
+    animation: 2s ${rotate} linear infinite;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         width: 60px;
