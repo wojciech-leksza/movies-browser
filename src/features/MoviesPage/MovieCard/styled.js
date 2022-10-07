@@ -9,9 +9,15 @@ export const Card = styled.article`
     padding: 16px;
     min-height: 650px;
     max-width: 400px;
-    border-radius: ${({ theme: { borderRadiusSmall } }) => borderRadiusSmall};
-    box-shadow: ${({ theme: { boxShadow } }) => boxShadow};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
+    box-shadow: ${({ theme }) => theme.boxShadow.tile};
     background-color: ${({ theme: { colors } }) => colors.white};
+    transition: 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-15px);
+    }
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         grid-template-columns: 1fr 1fr;
@@ -23,7 +29,7 @@ export const Card = styled.article`
 export const Poster = styled.div`
     width: 100%;
     min-height: 434px;
-    border-radius: ${({ theme: { borderRadiusSmall } }) => borderRadiusSmall};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
     align-content: center;
@@ -100,7 +106,7 @@ export const Tag = styled.li`
     line-height: 1.4;
     padding: 8px 16px;
     background-color: ${({ theme: { colors } }) => colors.grey};
-    border-radius: ${({ theme: { borderRadiusSmall } }) => borderRadiusSmall};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
     
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileSmall};
