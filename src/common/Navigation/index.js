@@ -21,7 +21,10 @@ const Navigation = () => {
           <StyledLogo>
             <StyledIcon />
             <Title>
-              <StyledLink>
+              <StyledLink
+                href="https://galerafrontend.github.io/Movies-browser/"
+                rel="noreferrer"
+              >
                 movies browser
               </StyledLink>
             </Title>
