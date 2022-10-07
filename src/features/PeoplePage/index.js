@@ -1,9 +1,9 @@
 import Navigation from "../../common/Navigation";
 
-const PersonsPage = () => {
+const PeoplePage = () => {
     return (
         <Navigation />
     )
 };
 
-export default PersonsPage;
+export default PeoplePage;
