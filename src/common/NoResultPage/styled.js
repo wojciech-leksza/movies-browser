@@ -13,18 +13,18 @@ export const Title = styled.h1`
     align-self: flex-start;
     margin: 56px 0 0 15%;
     font-weight: 600;
-    font-size: 36px;
+    font-size: ${({ theme }) => theme.fontSizes.larger};
     line-height: 120%;
     
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
-        font-size: 21px;
+        font-size: ${({ theme }) => theme.fontSizes.large};
         margin-bottom: 60px;
         margin: 36px 0 0 13%;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         font-weight: 500;
-        font-size: 14px;
+        font-size: ${({ theme }) => theme.fontSizes.small};
         line-height: 130%;
         margin: 24px 0 0 7%;
     }
@@ -36,11 +36,9 @@ export const Element = styled(NoResultElement)`
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         width: 50%;
-        height:auto;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         width: 60%;
-        height:auto;
     }
 `
