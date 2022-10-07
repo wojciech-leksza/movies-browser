@@ -12,17 +12,17 @@ export const Container = styled.main`
 export const StyledIco = styled(ErrorElement)`
     margin: 120px 0px 40px;
     width: 120px;
-    height:auto;
+    height: auto;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         width: 80px;
-        height:auto;
+        height: auto;
         margin: 80px 0px 20px;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         width: 40px;
-        height:auto;
+        height: auto;
         margin: 40px 0px 10px;
     }
 `
@@ -63,41 +63,32 @@ export const SubTitle = styled.h2`
 `
 
 export const Button = styled(NavLink)`
-    text-decoration:none;
+    padding:16px 24px;
+    text-decoration: none;
     border-radius: 5px;
     color:${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.blue};
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    border:none;
+    border: none;
     cursor: pointer;
     :hover{
-        filter:brightness(110%);
+        filter: brightness(110%);
     }
     :active{
-        filter:brightness(90%);
+        filter: brightness(90%);
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         border-radius: 4px;
         font-size: 9px;
+        padding:8px 16px;
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         border-radius: 3px;
         font-size: 5px;
-    }
-`
-
-export const Content = styled.div`
-    margin:16px 24px;
-
-    @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
-        margin:8px 16px;
-    }
-
-    @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        margin:1px 8px;
+        padding:1px 8px;
     }
 `

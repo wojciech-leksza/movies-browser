@@ -1,4 +1,4 @@
-import { movies, people } from "../../core/App/routes";
+import { moviesPath, peoplePath } from "../../core/App/routes";
 import SearchBar from "./SearchBar";
 import {
   Header,
@@ -15,35 +15,33 @@ import {
 
 const Navigation = () => {
   return (
-    <>
-      <Header>
-        <Wrapper>
-          <Nav>
-            <StyledLogo>
-              <StyledIcon />
-              <Title>
-                <StyledLink>
-                  movies browser
-                </StyledLink>
-              </Title>
-            </StyledLogo>
-            <NavList>
-              <NavListItem>
-                <StyledNavLink to={movies}>
-                  movies
-                </StyledNavLink>
-              </NavListItem>
-              <NavListItem>
-                <StyledNavLink to={people}>
-                  people
-                </StyledNavLink>
-              </NavListItem>
-            </NavList>
-          </Nav>
-          <SearchBar/>
-        </Wrapper>
-      </Header>
-    </>
+    <Header>
+      <Wrapper>
+        <Nav>
+          <StyledLogo>
+            <StyledIcon />
+            <Title>
+              <StyledLink>
+                movies browser
+              </StyledLink>
+            </Title>
+          </StyledLogo>
+          <NavList>
+            <NavListItem>
+              <StyledNavLink to={moviesPath}>
+                movies
+              </StyledNavLink>
+            </NavListItem>
+            <NavListItem>
+              <StyledNavLink to={peoplePath}>
+                people
+              </StyledNavLink>
+            </NavListItem>
+          </NavList>
+        </Nav>
+        <SearchBar />
+      </Wrapper>
+    </Header>
   )
 };
 
