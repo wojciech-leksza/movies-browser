@@ -61,7 +61,7 @@ export const SubTitle = styled.h2`
 
 export const Button = styled.button`
     padding: 16px 24px;
-    border-radius: ${({ theme }) => theme.borderRadiusSmall};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
     color:${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.blue};
     font-weight: 700;
