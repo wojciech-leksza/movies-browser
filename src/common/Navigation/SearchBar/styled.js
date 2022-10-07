@@ -26,6 +26,7 @@ export const StyledIcon = styled(SearchIcon)`
   width: 18px;
   margin-right: 18px;
   color: ${({ theme }) => theme.colors.darkGrey};
+  cursor: text;
 
   @media(max-width: ${({theme}) => theme.breakpoints.mobileMax}px) {
     width: 12px;
