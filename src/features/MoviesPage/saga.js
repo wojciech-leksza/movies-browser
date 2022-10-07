@@ -1,10 +1,10 @@
-import { takeLatest, call, put } from 'redux-saga/effects'
-import { fetchMovies, fetchMoviesError, fetchMoviesSuccess } from './slice'
-//import getMovies function 
+import { takeLatest, call, put, delay } from "redux-saga/effects";
+import { fetchMovies, fetchMoviesError, fetchMoviesSuccess } from "./slice";
+import getMovies from "../../core/moviesAPI";
 
 function* fetchMoviesHandler() {
     try {
-        yield put(fetchMovies());
+        yield delay(2000); //just for DEMO
         const movies = yield call(getMovies);
         yield put(fetchMoviesSuccess(movies));
     } catch (error) {
