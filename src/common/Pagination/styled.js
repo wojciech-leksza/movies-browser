@@ -14,7 +14,7 @@ export const Button = styled.button`
   align-items: center;
   background: ${({ theme }) => theme.colors.grey};
   padding: 8px;
-  border-radius: ${({ theme }) => theme.borderRadiusSmall};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
   color: ${({ theme }) => theme.colors.woodSmoke};
   border: none;
   margin: 0 12px;

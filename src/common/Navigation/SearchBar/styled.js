@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   padding: 12px 24px;
   align-items: center;
   background: ${({ theme }) => theme.colors.white};
-  border-radius: 32px;
+  border-radius: ${({ theme }) => theme.borderRadius.larger};;
 
   @media(max-width: ${({theme}) => theme.breakpoints.tabletMax}px) {
     margin-top: 12px;

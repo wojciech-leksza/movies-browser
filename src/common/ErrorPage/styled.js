@@ -61,7 +61,7 @@ export const SubTitle = styled.h2`
 
 export const Button = styled.button`
     padding: 16px 24px;
-    border-radius: ${({theme}) => theme.borderRadiusSmall};
+    border-radius: ${({ theme }) => theme.borderRadiusSmall};
     color:${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.blue};
     font-weight: 700;
@@ -80,12 +80,12 @@ export const Button = styled.button`
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
-        border-radius: 4px;
+        border-radius: ${({ theme }) => theme.borderRadius.tabletSmall};
         font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
     }
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        border-radius: 3px;
+        border-radius: ${({ theme }) => theme.borderRadius.mobileSmall};
         font-size: ${({ theme }) => theme.fontSizes.mobileSmall};
         padding: 8px 12px;
     }

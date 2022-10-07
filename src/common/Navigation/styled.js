@@ -41,14 +41,14 @@ export const StyledIcon = styled(VideoIcon)`
 
 export const Title = styled.h1`
   font-weight: 500;
-  font-size: ${({theme}) => theme.fontSizes.large};
+  font-size: ${({ theme }) => theme.fontSizes.large};
   margin: 0;
   letter-spacing: -1.5px;
   text-transform: capitalize;
   margin-left: 12px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    font-size: ${({theme}) => theme.fontSizes.mobileMedium};
+    font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
     letter-spacing: -0.5px;
   }
 `;
@@ -59,10 +59,10 @@ export const NavList = styled.ul`
   padding: 0;
   list-style: none;
   font-weight: 600;
-  font-size: ${({theme}) => theme.fontSizes.small};
+  font-size: ${({ theme }) => theme.fontSizes.small};
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    font-size: ${({theme}) => theme.fontSizes.mobileMedium};
+    font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
     margin-left: 24px;
   }
 
@@ -96,6 +96,6 @@ export const StyledNavLink = styled(StyledLink)`
 
   &:active {
     border: 1px solid ${({ theme }) => theme.colors.white};
-    border-radius: 24px;
+    border-radius: ${({ theme }) => theme.borderRadius.large};
   }
 `;
