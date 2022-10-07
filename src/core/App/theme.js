@@ -29,7 +29,13 @@ export const theme = {
     mobileMedium: "13px",
     mobileSmall: "10px",
   },
-  borderRadiusSmall: "5px",
+  borderRadius: {
+    larger: "32px",
+    large: "24px",
+    small: "5px",
+    tabletSmall: "4px",
+    mobileSmall: "3px",
+  },
   boxShadow: {
     tile: "0px 4px 12px rgba(186, 199, 213, 0.5)",
     hover: "0 0 0 2px rgb(140, 194, 255)",
