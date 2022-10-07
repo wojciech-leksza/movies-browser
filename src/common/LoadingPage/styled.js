@@ -31,12 +31,9 @@ export const Title = styled.h1`
 `
 
 const rotate = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 `
 
 export const Element = styled(loadingElement)`
