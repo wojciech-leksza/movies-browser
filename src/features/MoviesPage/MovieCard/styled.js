@@ -2,7 +2,21 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
 import { ReactComponent as Video } from "./Video.svg";
 
-export const Card = styled.article`
+export const Wrapper = styled.ul`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+    padding: 0;
+
+    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        margin-top: 12px;
+        gap: 16px;
+        grid-template-columns: 1fr;
+    };
+`;
+
+export const Card = styled.li`
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
