@@ -19,7 +19,8 @@ const MovieCard = ({ movies }) => (
 	<Wrapper>
 		{movies &&
 			movies.results &&
-			movies.results.map(({ id,
+			movies.results.map(({
+				id,
 				poster_path,
 				title,
 				release_date,
