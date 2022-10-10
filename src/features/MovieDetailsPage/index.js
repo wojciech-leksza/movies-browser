@@ -1,6 +1,8 @@
 import Container from "../../common/Container";
 import Navigation from "../../common/Navigation";
 import HeaderCard from "../../common/HeaderCard";
+import PersonCard from "../../common/PersonCard";
+import { Wrapper, Title } from "./styled";
 
 const MovieDetailsPage = () => {
   return (
@@ -23,10 +25,48 @@ const MovieDetailsPage = () => {
           overview={
             `A young Chinese maiden disguises herself as a male warrior in order to save her father. 
           Disguises herself as a male warrior in order to save her father. 
-          A young Chinese maiden disguises herself as a male warrior in order to save her father.`
+          A young Chinese maiden disguises herself as a male warrior in order to save her father. 
+          `
           }
         >
         </HeaderCard>
+        <Title>Cast</Title>
+        <Wrapper>
+          <PersonCard
+            pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+          <PersonCard
+            pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+          <PersonCard
+            pictureUrl={""}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+          <PersonCard
+            pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+        </Wrapper>
+
+        <Title>Crew</Title>
+        <Wrapper title={"crew"}>
+          <PersonCard
+            pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+          <PersonCard
+            pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
+            name={"Liu Yifei"}
+            character={"Mulan"}
+          />
+        </Wrapper>
       </Container>
     </>
   );

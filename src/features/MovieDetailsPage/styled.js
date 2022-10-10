@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+export const Wrapper = styled.article`
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     margin-top: 24px;
 
-    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
         margin-top: 12px;
         gap: 16px;
-        grid-template-columns: 1fr;
     };
 `;
+
+export const Title = styled.h2`
+    margin: 64px 0 32px;
+    line-height: 120%;
+    font-weight: 600;
+    font-size: ${({ theme }) => theme.fontSizes.larger}
+`
