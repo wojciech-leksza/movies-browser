@@ -11,29 +11,17 @@ import {
 	Tag,
 	TagsList,
 	Votes,
-	Wrapper,
 	YearOfProduction
 } from "./styled";
 
-const MovieCard = ({ movies }) => (
-	<Wrapper>
-		{movies &&
-			movies.results &&
-			movies.results.map(({
-				id,
-				poster_path,
-				title,
-				release_date,
-				vote_average,
-				vote_count
-			}) => (
-				<Card key={id}>
+const MovieCard = ({ movie }) => (
+				<Card key={movie.id}>
 					<Poster>
-						{poster_path ? <PosterImage src={poster_path} /> : <NoPosterIcon />}
+						{movie.poster_path ? <PosterImage src={movie.poster_path} /> : <NoPosterIcon />}
 					</Poster>
 					<Content>
-						<MovieTitle>{title}</MovieTitle>
-						<YearOfProduction>{release_date}</YearOfProduction>
+						<MovieTitle>{movie.title}</MovieTitle>
+						<YearOfProduction>{movie.release_date}</YearOfProduction>
 						<TagsList>
 							<Tag>Action</Tag>
 							<Tag>Adventure</Tag>
@@ -41,14 +29,11 @@ const MovieCard = ({ movies }) => (
 						</TagsList>
 						<Rating>
 							<RatingStar />
-							<Rate>{vote_average}</Rate>
-							<Votes>{vote_count} votes</Votes>
+							<Rate>{movie.vote_average}</Rate>
+							<Votes>{movie.vote_count} votes</Votes>
 						</Rating>
 					</Content>
 				</Card>
-			))}
-	</Wrapper>
-);
-
+			)
 
 export default MovieCard;
