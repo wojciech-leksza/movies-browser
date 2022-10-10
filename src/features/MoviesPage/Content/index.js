@@ -16,7 +16,7 @@ const Content = () => {
     switch (status) {
         case "loading":
             return (
-                <Container title={!!query ? `Search results for "${query}"` : "Search for Movies..."}>
+                <Container title="Searching for Movies...">
                     <LoadingPage />
                 </Container>
             );
@@ -27,16 +27,16 @@ const Content = () => {
                 </Container>
             );
         case "success":
-            if (!movies.results) {
+            if (movies.results.length === 0) {
                 return (
                     <Container title={`Sorry, there are no results for "${query}"`} >
                         <NoResultPage />
                     </Container >
-                )
+                );
             };
 
             return (
-                <Container>
+                <Container title={!!query ? `Search results for "${query}"` : "Popular Movies"}>
                     <MovieList>
                         {movies.results.map((movie) => (
                             <MovieCard

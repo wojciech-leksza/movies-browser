@@ -1,12 +1,9 @@
-import { Container, Title, Element } from "./styled";
+import { Container, Element } from "./styled";
 
-const LoadingPage = () => {
-    return (
-        <Container>
-            <Title>Search results for “{"Mulan"}”</Title>
-            <Element/>
-        </Container>
-    )
-};
+const LoadingPage = () => (
+    <Container>
+        <Element />
+    </Container>
+);
 
 export default LoadingPage;
