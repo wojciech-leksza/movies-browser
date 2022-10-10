@@ -4,8 +4,8 @@ import { ReactComponent as StarIcon } from "./starIcon.svg";
 
 export const Card = styled.article`
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto min-content min-content;
+    grid-template-columns: 312px auto;
+    grid-template-rows: auto min-content 1fr;
     gap: 0 40px;
     padding: 40px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
@@ -134,6 +134,7 @@ export const TagsList = styled.ul`
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         flex-grow: 0;
+        margin: 8px 0;
     }; 
 `;
 
