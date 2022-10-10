@@ -15,7 +15,7 @@ import {
 } from "./styled";
 
 const MovieCard = ({ movie }) => (
-				<Card key={movie.id}>
+				<Card>
 					<Poster>
 						{movie.poster_path ? <PosterImage src={movie.poster_path} /> : <NoPosterIcon />}
 					</Poster>
