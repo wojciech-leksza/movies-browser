@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
 import { ReactComponent as Video } from "./Video.svg";
 
-export const Card = styled.article`
+export const Card = styled.li`
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;

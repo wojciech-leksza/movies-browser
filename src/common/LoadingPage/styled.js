@@ -4,9 +4,7 @@ import { ReactComponent as loadingElement } from './img/loadingElement.svg';
 export const Container = styled.main`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 100%;
 `
 
 export const Title = styled.h1`

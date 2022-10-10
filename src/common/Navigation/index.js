@@ -21,7 +21,9 @@ const Navigation = () => {
           <StyledLogo>
             <StyledIcon />
             <Title>
-              <StyledLink>
+              <StyledLink
+                href="/"
+              >
                 movies browser
               </StyledLink>
             </Title>

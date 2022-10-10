@@ -83,10 +83,8 @@ export const NavListItem = styled.li`
 export const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
-  transition: opacity 0.5s;
 
   &:hover {
-    opacity: 50%;
     cursor: pointer;
   }
 `;
