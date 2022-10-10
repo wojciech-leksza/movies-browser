@@ -8,7 +8,7 @@ const MovieDetailsPage = () => {
       <Navigation />
       <Container>
         <HeaderCard
-          imgUrl={'https://www.monolith.pl/wp-content/uploads/2022/06/ostatni-slad-ostatni-slad-245x347.jpg'}
+          imgUrl={'https://cdn1.naekranie.pl/wp-content/uploads/2020%2F02%2Fmulan-character-poster-1-1207853_5e500f8739bdd.jpeg'}
           title={"Mulan"}
           movieYear={2020}
 

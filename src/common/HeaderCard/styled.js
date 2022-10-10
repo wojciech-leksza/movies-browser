@@ -4,8 +4,8 @@ import { ReactComponent as StarIcon } from "./starIcon.svg";
 
 export const Card = styled.article`
     display: grid;
-    grid-template-columns:max-content 1fr;
-    grid-template-rows:auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto min-content min-content;
     gap: 0 40px;
     padding: 40px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
@@ -13,24 +13,27 @@ export const Card = styled.article`
     background-color: ${({ theme: { colors } }) => colors.white};
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        grid-template-rows:1fr;
-        gap: 16px;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 150px auto;
+        gap: 8px 16px;
         padding: 16px;
     }
 `;
 
 export const Poster = styled.div`
     grid-row-start: span 2;
-    max-width: 312px;
     background-color: ${({ theme: { colors } }) => colors.silver};
-    display:flex;
+    display: flex;
     align-content: center;
     justify-content: center;
     border-radius: 5px;
+    max-width:464px;
+    min-width:232px;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        max-width: 114px;
-        grid-row-start: span 1;
+        max-width: 150px;
+        min-width:90px;
+        grid-row-start: 1;
     }
 `;
 
@@ -50,6 +53,7 @@ export const NoPosterIcon = styled(Video)`
 
 export const Details = styled.div`
     grid-area: 1 / 2;
+
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         grid-row-start: span 3;
     }; 
@@ -84,6 +88,10 @@ export const Year = styled.p`
 export const SubTitle = styled.div`
     margin: 8px 0;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileLarger};
+
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tabletMax}px) {
+        font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileLarge};
+    }; 
     
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         grid-column: 1 / 3;
@@ -174,7 +182,7 @@ export const SecondaryText = styled.span`
     line-height: 120%;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        display:none;
+        display: none;
     }; 
 `
 
