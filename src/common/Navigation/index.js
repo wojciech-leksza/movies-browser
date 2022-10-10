@@ -22,7 +22,7 @@ const Navigation = () => {
             <StyledIcon />
             <Title>
               <StyledLink
-                href="/"
+                href="/Movies-browser/"
               >
                 movies browser
               </StyledLink>
