@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies, selectMovies, selectStatus } from "./slice";
 import { useEffect } from "react";
 import { MovieList } from "./styled";
-import getMovies from "../../core/moviesAPI";
 import LoadingPage from "../../common/LoadingPage";
 import ErrorPage from "../../common/ErrorPage";
+import NoResultPage from "../../common/NoResultPage";
 
 const MoviesPage = () => {
   const movies = useSelector(selectMovies);
@@ -35,12 +35,14 @@ const MoviesPage = () => {
             ) : (
               <>
                 <MovieList>
-                  {movies.results.map((movie) => (
-                    <MovieCard
-                      key={movie.id}
-                      movie={movie}
-                    />
-                  ))}
+                  {!movies.results
+                    ? <NoResultPage />
+                    : movies.results.map((movie) => (
+                      <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                      />
+                    ))}
                 </MovieList>
                 <Pagination />
               </>
