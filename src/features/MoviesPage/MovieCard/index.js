@@ -29,7 +29,9 @@ const MovieCard = ({ movie }) => {
 				<YearOfProduction>{movie.release_date}</YearOfProduction>
 				<TagsList>
 					{movie.genre_ids.map((genreId) => (
-						<Tag>{genres.find(({id}) => id === genreId).name}</Tag>
+						<Tag key={genreId}>
+							{genres.find(({ id }) => id === genreId).name}
+						</Tag>
 					))}
 				</TagsList>
 				<Rating>
