@@ -5,7 +5,7 @@ const moviesSlice = createSlice({
     initialState: {
         status: "loading",
         movies: null,
-        query: "",
+        query: null,
         page: 1,
     },
     reducers: {

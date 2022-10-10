@@ -24,7 +24,6 @@ function* fetchMoviesHandler() {
 };
 
 function* setQueryHandler() {
-    yield delay(500);
     yield put(fetchMovies());
 };
 
