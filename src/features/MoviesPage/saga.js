@@ -26,7 +26,7 @@ function* fetchMoviesHandler() {
     const query = yield select(selectQuery);
     const page = yield select(selectPage);
 
-    yield delay(2000); //just for DEMO
+    yield delay(500); //just for DEMO
 
     try {
         const movies = yield call(getMovies, page, query);
