@@ -34,6 +34,7 @@ export const Poster = styled.div`
     display: flex;
     align-content: center;
     justify-content: center;
+    overflow: hidden;
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         min-height: 169px;
