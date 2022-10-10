@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { setQuery } from "./slice";
 
-export const queryParamName = "szukaj";
+export const queryParamName = "search";
 
 export const useQueryParams = () => {
     const dispatch = useDispatch();
