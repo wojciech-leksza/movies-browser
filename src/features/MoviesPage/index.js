@@ -19,40 +19,37 @@ const MoviesPage = () => {
     dispatch(fetchMovies());
   }, [dispatch]);
 
-  switch (status) {
-    case "loading":
-      return (
-        <>
-          <Navigation />
-          <LoadingPage />
-        </>
-      );
-
-    case "error":
-      return (
-        <>
-          <Navigation />
-          <ErrorPage />
-        </>
-      );
-
-    case "success":
-      return (
-        <>
-          <Navigation />
-          <Container title="Popular Movies">
-            <MovieList>
-              {movies.results.map((movie) => (
-                < MovieCard
-                  movie={movie}
-                />
-              ))}
-            </MovieList>
-            <Pagination />
-          </Container>
-        </>
-      );
-  }
+  return (
+    <>
+      <Navigation />
+      <Container
+        title={status === "success" ? "Popular Movies" : ""}
+      >
+        {status === "loading"
+          ? (
+            <LoadingPage />
+          )
+          : (
+            status === "error" ? (
+              <ErrorPage />
+            ) : (
+              <>
+                <MovieList>
+                  {movies.results.map((movie) => (
+                    <MovieCard
+                      key={movie.id}
+                      movie={movie}
+                    />
+                  ))}
+                </MovieList>
+                <Pagination />
+              </>
+            )
+          )
+        }
+      </Container>
+    </>
+  )
 };
 
 export default MoviesPage;
