@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from "react-redux";
+import { selectPage, selectTotalPages, setPage } from "../../features/MoviesPage/slice";
 import {
   Button,
   Wrapper,
@@ -11,25 +13,47 @@ import {
 } from "./styled";
 
 const Pagination = () => {
+  const dispatch = useDispatch();
+  const page = useSelector(selectPage);
+  const totalPages = useSelector(selectTotalPages);
+
   return (
     <Wrapper>
-      <Button>
+      <Button
+        disabled={page <= 1}
+        onClick={() => {dispatch(setPage(1))}}
+      >
         <LeftArrow />
         <LeftArrowMobile />
         <Text>First</Text>
       </Button>
-      <Button>
+      <Button
+        disabled={page <= 1}
+        onClick={() => {dispatch(setPage(page - 1))}}
+      >
         <LeftArrow />
         <Text>Previous</Text>
       </Button>
       <Paragraph>
-        Page&nbsp;<PageNumber>1</PageNumber> of&nbsp;<PageNumber>500</PageNumber>
+        Page&nbsp;
+        <PageNumber>
+          {page}
+        </PageNumber> of&nbsp;
+        <PageNumber>
+          {totalPages > 500 ? 500 : totalPages}
+        </PageNumber>
       </Paragraph>
-      <Button>
+      <Button
+        disabled={page >= totalPages || page >= 500}
+        onClick={() => {dispatch(setPage(page + 1))}}
+      >
         <Text>Next</Text>
         <RightArrow />
       </Button>
-      <Button>
+      <Button
+        disabled={page >= totalPages || page >= 500}
+        onClick={() => {dispatch(setPage(totalPages > 500 ? 500 : totalPages))}}
+      >
         <Text>Last</Text>
         <RightArrowMobile />
         <RightArrow />

@@ -9,6 +9,7 @@ import {
     selectQuery,
     setQuery,
     setGenres,
+    setPage,
 } from "./slice";
 
 function* initHandler() {
@@ -35,12 +36,13 @@ function* fetchMoviesHandler() {
     };
 };
 
-function* setQueryHandler() {
+function* setQueryOrPageHandler() {
     yield put(fetchMovies());
 };
 
 export function* moviesSaga() {
     yield takeLatest(init.type, initHandler);
     yield takeLatest(fetchMovies.type, fetchMoviesHandler);
-    yield takeLatest(setQuery.type, setQueryHandler);
+    yield takeLatest(setQuery.type, setQueryOrPageHandler);
+    yield takeLatest(setPage.type, setQueryOrPageHandler);
 };
