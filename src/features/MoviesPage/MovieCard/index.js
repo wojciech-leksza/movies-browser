@@ -17,7 +17,7 @@ import {
 const MovieCard = ({ movie }) => (
 				<Card>
 					<Poster>
-						{movie.poster_path ? <PosterImage src={movie.poster_path} /> : <NoPosterIcon />}
+						{movie.poster_path ? <PosterImage src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} /> : <NoPosterIcon />}
 					</Poster>
 					<Content>
 						<MovieTitle>{movie.title}</MovieTitle>
