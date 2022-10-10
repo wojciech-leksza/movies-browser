@@ -26,7 +26,8 @@ export const Button = styled.button`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin: 0 6px;
+    margin: 0 3px;
+    padding: 4px;
   }
 `;
 
@@ -52,6 +53,7 @@ export const Paragraph = styled.p`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
     text-align: center;
+    font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
   }
 `;
 
@@ -63,6 +65,10 @@ export const PageNumber = styled.span`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0 2px;
+  }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
   }
 `;
 

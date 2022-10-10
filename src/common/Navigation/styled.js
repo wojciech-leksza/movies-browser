@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
 
 export const Nav = styled.nav`
   display: flex;
+  align-items: center;
 `;
 
 export const StyledLogo = styled.div`
@@ -37,6 +38,10 @@ export const StyledIcon = styled(VideoIcon)`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     width: 18px
+  }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    width: 16px;
   }
 `;
 
@@ -51,6 +56,10 @@ export const Title = styled.h1`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-size: ${({ theme }) => theme.fontSizes.mobileMedium};
     letter-spacing: -0.5px;
+  }
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    margin-left: 6px;
   }
 `;
 
@@ -68,7 +77,8 @@ export const NavList = styled.ul`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
-    margin-left: 0;
+    margin-left: 12px;
+    font-size: ${({ theme }) => theme.fontSizes.mobileSmall};
   } 
 `;
 
@@ -76,7 +86,7 @@ export const NavListItem = styled.li`
   padding: 8px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
-    padding: 8px 6px;
+    padding: 0 6px;
   }
 `;
 
@@ -93,7 +103,7 @@ export const StyledNavLink = styled(NavLink)`
 color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   transition: opacity 0.5s;
-  padding: 8px 16px;
+  padding: 4px 8px;
   text-transform: uppercase;
 
   &.active {
