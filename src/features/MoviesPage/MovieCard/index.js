@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { selectGenres } from "../slice";
 import {
 	Card,
 	Content,
@@ -14,26 +16,30 @@ import {
 	YearOfProduction
 } from "./styled";
 
-const MovieCard = ({ movie }) => (
-				<Card>
-					<Poster>
-						{movie.poster_path ? <PosterImage src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} /> : <NoPosterIcon />}
-					</Poster>
-					<Content>
-						<MovieTitle>{movie.title}</MovieTitle>
-						<YearOfProduction>{movie.release_date}</YearOfProduction>
-						<TagsList>
-							<Tag>Action</Tag>
-							<Tag>Adventure</Tag>
-							<Tag>Drama</Tag>
-						</TagsList>
-						<Rating>
-							<RatingStar />
-							<Rate>{movie.vote_average}</Rate>
-							<Votes>{movie.vote_count} votes</Votes>
-						</Rating>
-					</Content>
-				</Card>
-			)
+const MovieCard = ({ movie }) => {
+	const genres = useSelector(selectGenres);
+
+	return (
+		<Card>
+			<Poster>
+				{movie.poster_path ? <PosterImage src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} /> : <NoPosterIcon />}
+			</Poster>
+			<Content>
+				<MovieTitle>{movie.title}</MovieTitle>
+				<YearOfProduction>{movie.release_date}</YearOfProduction>
+				<TagsList>
+					{movie.genre_ids.map((genreId) => (
+						<Tag>{genres.find(({id}) => id === genreId).name}</Tag>
+					))}
+				</TagsList>
+				<Rating>
+					<RatingStar />
+					<Rate>{movie.vote_average}</Rate>
+					<Votes>{movie.vote_count} votes</Votes>
+				</Rating>
+			</Content>
+		</Card>
+	);
+};
 
 export default MovieCard;

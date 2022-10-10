@@ -1,6 +1,6 @@
 import Navigation from "../../common/Navigation";
 import { useDispatch } from "react-redux";
-import { fetchMovies } from "./slice";
+import { init } from "./slice";
 import { useEffect } from "react";
 
 import Content from "./Content";
@@ -9,7 +9,7 @@ const MoviesPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovies());
+    dispatch(init());
   }, [dispatch]);
 
   return (
