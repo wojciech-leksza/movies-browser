@@ -5,6 +5,7 @@ import Navigation from "../../common/Navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies, selectMovies, selectStatus } from "./slice";
 import { useEffect } from "react";
+import { MovieList } from "./styled";
 import getMovies from "../../core/moviesAPI";
 import LoadingPage from "../../common/LoadingPage";
 import ErrorPage from "../../common/ErrorPage";
@@ -15,7 +16,7 @@ const MoviesPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovies(getMovies));
+    dispatch(fetchMovies());
   }, [dispatch]);
 
   switch (status) {
@@ -40,9 +41,13 @@ const MoviesPage = () => {
         <>
           <Navigation />
           <Container title="Popular Movies">
-            <MovieCard
-              movies={movies}
-            />
+            <MovieList>
+              {movies.results.map((movie) => (
+                < MovieCard
+                  movie={movie}
+                />
+              ))}
+            </MovieList>
             <Pagination />
           </Container>
         </>
