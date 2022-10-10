@@ -14,7 +14,7 @@ export const Card = styled.article`
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         grid-template-rows: auto auto auto;
-        grid-template-columns: 150px auto;
+        grid-template-columns: 135px auto;
         gap: 8px 16px;
         padding: 16px;
     }
@@ -154,13 +154,14 @@ export const Tag = styled.li`
 
 export const Rating = styled.div`
     display: flex;
-    gap: 16px;
+    align-items:center;
+    gap: 12px;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
     line-height: 1.5;
     margin-top: 10px;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        gap: 8px;
+        gap: 5px;
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileSmall};
         margin-top: 8px;
     }; 
@@ -179,7 +180,7 @@ export const RatingStar = styled(StarIcon)`
 export const SecondaryText = styled.span`
     font-weight: 400;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.small};
-    line-height: 120%;
+    line-height: 17px;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         display: none;
@@ -190,10 +191,13 @@ export const Rate = styled.p`
     font-weight: 600;
     color: ${({ theme: { colors } }) => colors.black};
     margin: 0;
+    line-height: 29px;
 `;
 
 export const Votes = styled.p`
     margin: 0;
+    font-weight: 400;
+    line-height: 17px;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         color: ${({ theme: { colors } }) => colors.darkGrey};
