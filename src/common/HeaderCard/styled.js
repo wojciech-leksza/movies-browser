@@ -110,7 +110,7 @@ export const Caption = styled.span`
 export const OverviewComponent = styled.div`
     grid-row-start: span 2;
     font-weight: 400;
-    font-size: 20px;
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.large};
     line-height: 160%;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
