@@ -23,7 +23,6 @@ const Navigation = () => {
             <Title>
               <StyledLink
                 href="/"
-                rel="noreferrer"
               >
                 movies browser
               </StyledLink>
