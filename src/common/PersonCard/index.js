@@ -1,9 +1,9 @@
-import { Card, Picture, PersonName, PersonCharacter } from "./styled";
+import { Card, Picture, PersonName, PersonCharacter, NoPictureElement, StyledNoPicture } from "./styled";
 
 const PersonCard = ({ pictureUrl, name, character }) => {
     return (
         <Card>
-            <Picture src={pictureUrl} />
+            {pictureUrl? <Picture src={pictureUrl}/> : <NoPictureElement><StyledNoPicture/></NoPictureElement>}
             <PersonName>{name}</PersonName>
             <PersonCharacter>{character}</PersonCharacter>
         </Card>
