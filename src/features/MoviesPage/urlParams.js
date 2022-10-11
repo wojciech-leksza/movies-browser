@@ -21,6 +21,7 @@ export const useQueryParams = () => {
     }, [queryParam]);
 
     const setQueryParam = (query) => {
+        urlParams.set(pageParamName, 1);
         if (!query) {
             urlParams.delete(queryParamName);
             setUrlParams(urlParams);
