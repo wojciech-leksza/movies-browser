@@ -10,6 +10,7 @@ import {
     Rate,
     Votes,
     RatingBlock,
+    RateSecondary,
 } from "./styled";
 
 const Header = ({ poster, LongTitle, rate, votes }) => {
@@ -24,7 +25,7 @@ const Header = ({ poster, LongTitle, rate, votes }) => {
                         <RatingBlock>
                             <Rating>
                                 <RatingStar />
-                                <Rate>{rate}</Rate>
+                                <Rate>{rate} <RateSecondary>/10</RateSecondary></Rate>
                             </Rating>
                             <Votes>{votes} votes</Votes>
                         </RatingBlock>
