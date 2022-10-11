@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovies, selectQuery, selectStatus } from "../slice";
+import { usePageParams } from "../urlParams";
 import { MovieList } from "../styled";
 import LoadingPage from "../../../common/LoadingPage";
 import ErrorPage from "../../../common/ErrorPage";
@@ -12,6 +13,7 @@ const Content = () => {
     const movies = useSelector(selectMovies);
     const status = useSelector(selectStatus);
     const query = useSelector(selectQuery);
+    const setPageParams = usePageParams();
 
     switch (status) {
         case "loading":
@@ -45,7 +47,7 @@ const Content = () => {
                             />
                         ))}
                     </MovieList>
-                    <Pagination />
+                    <Pagination setPageParams={setPageParams}/>
                 </Container>
             );
 

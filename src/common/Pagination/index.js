@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectPage, selectTotalPages, setPage } from "../../features/MoviesPage/slice";
+import { useSelector } from "react-redux";
+import { selectPage, selectTotalPages } from "../../features/MoviesPage/slice";
 import {
   Button,
   Wrapper,
@@ -12,8 +12,7 @@ import {
   RightArrowMobile
 } from "./styled";
 
-const Pagination = () => {
-  const dispatch = useDispatch();
+const Pagination = ({ setPageParams }) => {
   const page = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
 
@@ -21,7 +20,7 @@ const Pagination = () => {
     <Wrapper>
       <Button
         disabled={page <= 1}
-        onClick={() => {dispatch(setPage(1))}}
+        onClick={() => { setPageParams(1) }}
       >
         <LeftArrow />
         <LeftArrowMobile />
@@ -29,7 +28,7 @@ const Pagination = () => {
       </Button>
       <Button
         disabled={page <= 1}
-        onClick={() => {dispatch(setPage(page - 1))}}
+        onClick={() => { setPageParams(page - 1) }}
       >
         <LeftArrow />
         <Text>Previous</Text>
@@ -45,14 +44,14 @@ const Pagination = () => {
       </Paragraph>
       <Button
         disabled={page >= totalPages || page >= 500}
-        onClick={() => {dispatch(setPage(page + 1))}}
+        onClick={() => { setPageParams(page + 1) }}
       >
         <Text>Next</Text>
         <RightArrow />
       </Button>
       <Button
         disabled={page >= totalPages || page >= 500}
-        onClick={() => {dispatch(setPage(totalPages > 500 ? 500 : totalPages))}}
+        onClick={() => { setPageParams(totalPages > 500 ? 500 : totalPages) }}
       >
         <Text>Last</Text>
         <RightArrowMobile />
