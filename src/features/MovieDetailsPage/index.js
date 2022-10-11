@@ -3,11 +3,21 @@ import Navigation from "../../common/Navigation";
 import HeaderCard from "../../common/HeaderCard";
 import PersonCard from "../../common/PersonCard";
 import { Wrapper, Title } from "./styled";
+import Header from "./Header";
 
 const MovieDetailsPage = () => {
+  const rate = (7.786).toFixed(1)
+  const votes = 335
+
   return (
     <>
       <Navigation />
+      <Header
+        poster={"https://popkulturysci.pl/wp-content/uploads/2020/02/mulan-fina%C5%82owy-zwiastun-super-bowl-disney.jpg"}
+        LongTitle={"Mulan long title"}
+        rate={rate}
+        votes={votes}
+      />
       <Container>
         <HeaderCard
           imgUrl={'https://cdn1.naekranie.pl/wp-content/uploads/2020%2F02%2Fmulan-character-poster-1-1207853_5e500f8739bdd.jpeg'}
@@ -19,8 +29,8 @@ const MovieDetailsPage = () => {
           captionSubTitleSecond={"Release date"}
           subTitleSecond={"24.10.2020"}
 
-          rate={7.786}
-          votes={335}
+          rate={rate}
+          votes={votes}
           tags={"TagsHere"}
           overview={
             `A young Chinese maiden disguises herself as a male warrior in order to save her father. 

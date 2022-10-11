@@ -9,7 +9,7 @@ export const Wrapper = styled.article`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
         margin-top: 12px;
         gap: 16px;
-    };
+    }
 `;
 
 export const Title = styled.h2`

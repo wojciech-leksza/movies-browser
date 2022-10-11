@@ -54,7 +54,7 @@ const HeaderCard = ({
                 {rate && votes ?
                     <Rating>
                         <RatingStar />
-                        <Rate>{rate.toFixed(1)} <SecondaryText>/10</SecondaryText></Rate>
+                        <Rate>{rate} <SecondaryText>/10</SecondaryText></Rate>
                         <Votes>{votes} votes</Votes>
                     </Rating>
                     :

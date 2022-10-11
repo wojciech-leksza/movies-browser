@@ -3,7 +3,7 @@ import { Card, Picture, PersonName, PersonCharacter, NoPictureElement, StyledNoP
 const PersonCard = ({ pictureUrl, name, character }) => {
     return (
         <Card>
-            {pictureUrl? <Picture src={pictureUrl}/> : <NoPictureElement><StyledNoPicture/></NoPictureElement>}
+            {pictureUrl? <Picture alt={name} src={pictureUrl}/> : <NoPictureElement><StyledNoPicture/></NoPictureElement>}
             <PersonName>{name}</PersonName>
             <PersonCharacter>{character}</PersonCharacter>
         </Card>
