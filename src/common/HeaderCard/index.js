@@ -11,7 +11,7 @@ import {
     TagsList,
     Votes,
     Year,
-    OverviewComponent,
+    Overview,
     SubTitle,
     Caption,
 } from "./styled";
@@ -62,9 +62,9 @@ const HeaderCard = ({
                 }
 
             </Details>
-            <OverviewComponent>
+            <Overview>
                 <p>{overview}</p>
-            </OverviewComponent>
+            </Overview>
 
         </Card>
     )

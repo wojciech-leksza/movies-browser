@@ -107,7 +107,7 @@ export const Caption = styled.span`
     }
 `;
 
-export const OverviewComponent = styled.div`
+export const Overview = styled.div`
     grid-row-start: span 2;
     font-weight: 400;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.large};
