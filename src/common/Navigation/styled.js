@@ -86,7 +86,7 @@ export const NavListItem = styled.li`
   padding: 8px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
-    padding: 0 6px;
+    padding: 4px;
   }
 `;
 
@@ -103,7 +103,7 @@ export const StyledNavLink = styled(NavLink)`
 color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   transition: opacity 0.5s;
-  padding: 4px 8px;
+  padding: 14px 24px;
   text-transform: uppercase;
 
   &.active {
@@ -115,5 +115,8 @@ color: ${({ theme }) => theme.colors.white};
     opacity: 50%;
     cursor: pointer;
   }
-  
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    padding: 8px 10px;
+  }
 `;

@@ -17,7 +17,7 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.small};
   color: ${({ theme }) => theme.colors.woodSmoke};
   border: none;
-  margin: 0 12px;
+  margin: 0 12px 0 12px;
   transition: box-shadow 0.5s;
 
   &:hover {
@@ -26,8 +26,8 @@ export const Button = styled.button`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin: 0 3px;
-    padding: 4px;
+    margin: 0 2px 0 2px;
+    padding: 8px 4px 8px 4px;
   }
 `;
 
