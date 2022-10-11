@@ -4,7 +4,7 @@ import { ReactComponent as StarIcon } from "./starIcon.svg";
 
 export const Card = styled.article`
     display: grid;
-    grid-template-columns: 312px auto;
+    grid-template-columns: 312px 1fr;
     grid-template-rows: auto min-content 1fr;
     gap: 0 40px;
     padding: 40px;
@@ -27,11 +27,10 @@ export const Poster = styled.div`
     align-content: center;
     justify-content: center;
     border-radius: 5px;
-    max-width:464px;
+    width:100%;
     min-width:232px;
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        max-width: 150px;
         min-width:90px;
         grid-row-start: 1;
     }
@@ -62,8 +61,7 @@ export const Details = styled.div`
 export const StyledTitle = styled.h2`
     color: ${({ theme: { colors } }) => colors.black};
     font-size: ${({ theme: { fontSizes } }) => fontSizes.larger};
-    font-size: 36px;
-    line-height: 120%;
+    line-height: 1.2;
     margin: 0 0 24px;
     
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
@@ -109,9 +107,8 @@ export const Caption = styled.span`
 
 export const Overview = styled.div`
     grid-row-start: span 2;
-    font-weight: 400;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.large};
-    line-height: 160%;
+    line-height: 1.6;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileLarge};
@@ -133,13 +130,11 @@ export const TagsList = styled.ul`
     padding: 0;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        flex-grow: 0;
         margin: 8px 0;
     }; 
 `;
 
 export const Tag = styled.li`
-    align-self: flex-start;
     color: ${({ theme: { colors } }) => colors.black};
     font-size: ${({ theme: { fontSizes } }) => fontSizes.small};
     line-height: 1.4;
@@ -181,7 +176,7 @@ export const RatingStar = styled(StarIcon)`
 export const SecondaryText = styled.span`
     font-weight: 400;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.small};
-    line-height: 17px;
+    line-height: 1.2;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         display: none;
@@ -192,13 +187,13 @@ export const Rate = styled.p`
     font-weight: 600;
     color: ${({ theme: { colors } }) => colors.black};
     margin: 0;
-    line-height: 29px;
+    line-height: 1.3;
 `;
 
 export const Votes = styled.p`
     margin: 0;
     font-weight: 400;
-    line-height: 17px;
+    line-height: 1.2;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         color: ${({ theme: { colors } }) => colors.darkGrey};
