@@ -32,25 +32,7 @@ export const Shadow = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    box-shadow: inset 0 0 60px 100px ${({ theme: { colors } }) => colors.woodSmoke};
-
-    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tabletMax}px) {
-        box-shadow: inset 0 0 35px 60px ${({ theme: { colors } }) => colors.woodSmoke};
-    }; 
-
-    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        box-shadow: inset 0 0 20px 30px ${({ theme: { colors } }) => colors.woodSmoke};
-        width: 96%;
-        height: 100%;
-        left:2%;
-    }; 
-
-    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMin}px) {
-        box-shadow: inset 0 0 10px 20px ${({ theme: { colors } }) => colors.woodSmoke};
-        width: 95%;
-        height: 100%;
-        left:2.5%;
-    }; 
+    background: linear-gradient(90deg, rgba(24,24,27,1) 1%, rgba(0,0,0,0) 30%), linear-gradient(0deg, rgba(24,24,27,1) 1%, rgba(0,0,0,0) 30%), linear-gradient(180deg, rgba(24,24,27,1) 1%, rgba(0,0,0,0) 30%), linear-gradient(270deg, rgba(24,24,27,1) 1%, rgba(0,0,0,0) 20%);
 `;
 
 export const Content = styled.div`
