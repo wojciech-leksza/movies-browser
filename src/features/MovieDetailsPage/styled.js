@@ -4,7 +4,7 @@ export const Wrapper = styled.article`
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    margin-top: 24px;
+    margin-top: 32px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
         margin-top: 12px;
@@ -13,7 +13,7 @@ export const Wrapper = styled.article`
 `;
 
 export const Title = styled.h2`
-    margin: 64px 0 32px;
+    margin: 64px 0 0;
     line-height: 120%;
     font-weight: 600;
     font-size: ${({ theme }) => theme.fontSizes.larger};
