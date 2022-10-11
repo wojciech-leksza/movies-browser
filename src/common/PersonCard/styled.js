@@ -22,7 +22,7 @@ export const Picture = styled.img`
     border-radius: ${({ theme }) => theme.borderRadius.small};
 `;
 
-export const NoPictureElement = styled.div`
+export const NoPictureContainer = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
