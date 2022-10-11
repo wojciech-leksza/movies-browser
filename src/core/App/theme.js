@@ -20,6 +20,7 @@ export const theme = {
     tabletMax: 1199,
   },
   fontSizes: {
+    gigant: "64px",
     larger: "36px",
     large: "22px",
     medium: "16px",
