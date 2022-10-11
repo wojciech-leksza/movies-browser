@@ -18,7 +18,7 @@ export const useQueryParams = () => {
             dispatch(setQuery(queryParam));
         }, 500);
 
-    }, [queryParam, dispatch]);
+    }, [queryParam]);
 
     const setQueryParam = (query) => {
         if (!query) {

@@ -16,13 +16,16 @@ const rotate = keyframes`
 export const Element = styled(loadingElement)`
     width: 91px;
     height: auto;
+    margin-top: 120px;
     animation: 1s ${rotate} linear infinite;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
+        margin-top: 50px;
         width: 60px;
     };
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
+        margin-top: 24px;
         width: 35px;
     };
 `;
