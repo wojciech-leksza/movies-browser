@@ -1,34 +1,13 @@
 import styled from "styled-components";
-import { ReactComponent as NoResultElement } from './img/NoResultElement.svg';
+import { ReactComponent as NoResultElement } from "./img/NoResultElement.svg";
 
-export const Container = styled.main`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-`
-
-export const Title = styled.h1`
-    align-self: flex-start;
-    margin: 56px 0 0 15%;
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSizes.larger};
-    line-height: 120%;
-    
-    @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
-        font-size: ${({ theme }) => theme.fontSizes.large};
-        margin-bottom: 60px;
-        margin: 36px 0 0 13%;
-    }
-
-    @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        font-weight: 500;
-        font-size: ${({ theme }) => theme.fontSizes.small};
-        line-height: 130%;
-        margin: 24px 0 0 7%;
-    }
-`
+`;
 
 export const Element = styled(NoResultElement)`
     width: 40%;
@@ -36,9 +15,9 @@ export const Element = styled(NoResultElement)`
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         width: 50%;
-    }
+    };
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         width: 60%;
-    }
-`
+    };
+`;

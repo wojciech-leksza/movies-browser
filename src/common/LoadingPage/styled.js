@@ -1,49 +1,31 @@
 import styled, { keyframes } from "styled-components";
-import { ReactComponent as loadingElement } from './img/loadingElement.svg';
+import { ReactComponent as loadingElement } from "./img/loadingElement.svg";
 
-export const Container = styled.main`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
-
-export const Title = styled.h1`
-    align-self: flex-start;
-    margin: 56px 0 120px 15%;
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSizes.larger};
-    line-height: 120%;
-    
-    @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
-        font-size: ${({ theme }) => theme.fontSizes.large};
-        margin-bottom: 60px;
-        margin: 36px 0 60px 13%;
-    }
-
-    @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
-        font-weight: 500;
-        font-size: ${({ theme }) => theme.fontSizes.small};
-        line-height: 130%;
-        margin: 24px 0 24px 7%;
-    }
-`
+`;
 
 const rotate = keyframes`
     to {
         transform: rotate(360deg);
-    }
-`
+    };
+`;
 
 export const Element = styled(loadingElement)`
     width: 91px;
     height: auto;
+    margin-top: 120px;
     animation: 1s ${rotate} linear infinite;
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
+        margin-top: 50px;
         width: 60px;
-    }
+    };
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
+        margin-top: 24px;
         width: 35px;
-    }
-`
+    };
+`;

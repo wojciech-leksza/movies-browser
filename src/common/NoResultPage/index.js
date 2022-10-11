@@ -1,12 +1,9 @@
-import { Container, Title, Element } from "./styled";
+import { Container, Element } from "./styled";
 
-const NoResultPage = () => {
-    return (
-        <Container>
-            <Title>Sorry, there are no results for “{"Muan"}”</Title>
-            <Element />
-        </Container>
-    )
-};
+const NoResultPage = () => (
+    <Container>
+        <Element />
+    </Container>
+);
 
 export default NoResultPage;

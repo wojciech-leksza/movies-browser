@@ -1,5 +1,5 @@
 import axios from "axios";
-import { api_key, language, popularMoviesUrl, searchMoviesURL } from "./configAPI";
+import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL } from "./configAPI";
 
 const getPopularMovies = async (page = 1) => {
     try {
@@ -32,7 +32,7 @@ const getMoviesByQuery = async (page = 1, query) => {
     };  
 };
 
-const getMovies = (page, query) => {
+export const getMovies = (page, query) => {
     if (!!query) {
         return getMoviesByQuery(page, query);
     }
@@ -40,4 +40,16 @@ const getMovies = (page, query) => {
     return getPopularMovies(page);
 };
 
-export default getMovies;
+export const getGenres = async () => {
+    try {
+        const response = await axios.get(genresURL, {
+            params: {
+                api_key,
+                language,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error);
+    };  
+};
