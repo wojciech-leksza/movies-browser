@@ -9,7 +9,7 @@ export const Block = styled.header`
     background-color: ${({ theme: { colors } }) => colors.woodSmoke};
 `;
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.section`
     position: relative;
     display: flex;
     max-width: 1370px;
@@ -69,7 +69,7 @@ export const Content = styled.div`
 
 export const Title = styled.h1`
     font-weight: 600;
-    font-size: 64px;
+    font-size: ${({ theme: { fontSizes } }) => fontSizes.gigant};
     line-height: 120%;
 
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tabletMax}px) {
