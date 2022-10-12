@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectGenres } from "../../slice";
+import { selectGenres } from "../../features/Movies/slice";
 import {
 	Card,
 	Content,
