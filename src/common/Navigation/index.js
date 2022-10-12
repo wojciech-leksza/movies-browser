@@ -1,4 +1,4 @@
-import { moviesPath, peoplePath } from "../../core/App/routes";
+import { moviesPath, peoplePath } from "../../core/App/router";
 import SearchBar from "./SearchBar";
 import {
   Header,
