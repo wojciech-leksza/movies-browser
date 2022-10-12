@@ -14,9 +14,8 @@ import {
 
 function* initHandler() {
     try {
-        const genres = yield call(getGenres);
-        yield put(setGenres(genres));
-        yield put(fetchMovies());
+        const response = yield call(getGenres);
+        yield put(setGenres(response.genres));
     } catch (error) {
         yield put(fetchMoviesError());
     }
