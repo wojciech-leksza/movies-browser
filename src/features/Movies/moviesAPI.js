@@ -1,5 +1,5 @@
 import axios from "axios";
-import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL } from "./configAPI";
+import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL } from "../../core/configAPI";
 
 const getPopularMovies = async (page = 1) => {
     try {

@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
-import { selectMovies, selectQuery, selectStatus } from "../slice";
+import { selectMovies, selectQuery, selectStatus } from "../../slice";
 import { usePageParams } from "../urlParams";
 import { MovieList } from "../styled";
-import LoadingPage from "../../../common/LoadingPage";
-import ErrorPage from "../../../common/ErrorPage";
-import NoResultPage from "../../../common/NoResultPage";
-import Container from "../../../common/Container";
+import LoadingPage from "../../../../common/LoadingPage";
+import ErrorPage from "../../../../common/ErrorPage";
+import NoResultPage from "../../../../common/NoResultPage";
+import Container from "../../../../common/Container";
 import MovieCard from "../MovieCard";
-import Pagination from "../../../common/Pagination";
+import Pagination from "../../../../common/Pagination";
 
 const Content = () => {
 	const movies = useSelector(selectMovies);

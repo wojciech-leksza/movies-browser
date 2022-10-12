@@ -5,9 +5,9 @@ import Container from "../../../common/Container";
 import filterDuplicatedIds from "../../../common/filterDuplicatedIds";
 import HeaderCard from "../../../common/HeaderCard";
 import Navigation from "../../../common/Navigation";
-import MovieCard from "../../MoviesPage/MovieCard";
-import { selectGenres } from "../../MoviesPage/slice";
-import { MovieList } from "../../MoviesPage/styled";
+import MovieCard from "../../Movies/MoviesPage/MovieCard";
+import { selectGenres } from "../../Movies/slice";
+import { MovieList } from "../../Movies/MoviesPage/styled";
 import { fetchPersonDetails, selectPerson, selectStatus } from "../slice";
 
 const PersonDetailsPage = () => {

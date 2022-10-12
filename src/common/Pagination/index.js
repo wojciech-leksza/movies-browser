@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectPage, selectTotalPages } from "../../features/MoviesPage/slice";
+import { selectPage, selectTotalPages } from "../../features/Movies/slice";
 import {
   Button,
   Wrapper,

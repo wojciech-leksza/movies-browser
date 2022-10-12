@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { RouterProvider, } from "react-router-dom";
 import { router } from "./router";
-import { init } from "../../features/MoviesPage/slice";
+import { init } from "../../features/Movies/slice";
 import { Normalize } from "styled-normalize";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
@@ -13,7 +13,7 @@ const App = () => {
   
   useEffect(() => {
     dispatch(init());
-  }, [dispatch]);
+  }, []);
   
   return (
     <ThemeProvider theme={theme}>

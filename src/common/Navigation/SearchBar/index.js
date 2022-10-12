@@ -1,4 +1,4 @@
-import { useQueryParams } from "../../../features/MoviesPage/urlParams";
+import { useQueryParams } from "../../../features/Movies/MoviesPage/urlParams";
 import { Input, StyledIcon, Wrapper, Label } from "./styled";
 
 const SearchBar = () => {

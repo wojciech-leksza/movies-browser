@@ -1,5 +1,5 @@
 import { createHashRouter, createRoutesFromElements, Navigate, Route, } from "react-router-dom";
-import MoviesPage from "../../features/MoviesPage";
+import MoviesPage from "../../features/Movies/MoviesPage";
 import PeoplePage from "../../features/People/PeoplePage";
 import PersonDetailsPage from "../../features/People/PersonDetailsPage";
 

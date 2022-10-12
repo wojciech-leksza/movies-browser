@@ -1,5 +1,5 @@
 import { takeLatest, call, put, delay, select } from "redux-saga/effects";
-import { getGenres, getMovies } from "../../core/moviesAPI";
+import { getGenres, getMovies } from "./moviesAPI";
 import {
     init,
     fetchMovies,
