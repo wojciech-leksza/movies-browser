@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Container from "../../../common/Container";
+import { fetchPersonDetails, selectPerson, selectStatus } from "../slice";
 import filterDuplicatedIds from "../../../common/filterDuplicatedIds";
+import Container from "../../../common/Container";
 import HeaderCard from "../../../common/HeaderCard";
 import Navigation from "../../../common/Navigation";
 import MovieCard from "../../Movies/MoviesPage/MovieCard";
 import { selectGenres } from "../../Movies/slice";
 import { MovieList } from "../../Movies/MoviesPage/styled";
-import { fetchPersonDetails, selectPerson, selectStatus } from "../slice";
 
 const PersonDetailsPage = () => {
     const dispatch = useDispatch();
