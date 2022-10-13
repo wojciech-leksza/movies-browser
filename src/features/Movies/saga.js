@@ -1,5 +1,5 @@
 import { takeLatest, call, put, delay, select } from "redux-saga/effects";
-import { getGenres, getMovies } from "./moviesAPI";
+import { getCredits, getGenres, getMovieDetails, getMovies } from "./moviesAPI";
 import {
     init,
     fetchMovies,
@@ -10,6 +10,10 @@ import {
     setQuery,
     setGenres,
     setPage,
+    fetchMovieDetailsSuccess,
+    fetchMovieDetailsError,
+    fetchMovieDetails,
+    selectMovie,
 } from "./slice";
 
 function* initHandler() {
@@ -35,6 +39,19 @@ function* fetchMoviesHandler() {
     };
 };
 
+function* fetchMovieDetailsHandler() {
+    const id = yield select(selectMovie);
+
+    try {
+        const movieDetails = yield call(getMovieDetails, id);
+        const credits = yield call(getCredits, id);
+
+        yield put(fetchMovieDetailsSuccess({movieDetails, credits}));
+    } catch (error) {
+        yield put(fetchMovieDetailsError());
+    };
+};
+
 function* setQueryOrPageHandler() {
     yield put(fetchMovies());
 };
@@ -42,6 +59,7 @@ function* setQueryOrPageHandler() {
 export function* moviesSaga() {
     yield takeLatest(init.type, initHandler);
     yield takeLatest(fetchMovies.type, fetchMoviesHandler);
+    yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
     yield takeLatest(setQuery.type, setQueryOrPageHandler);
     yield takeLatest(setPage.type, setQueryOrPageHandler);
 };

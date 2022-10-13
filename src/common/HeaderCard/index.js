@@ -43,9 +43,9 @@ const HeaderCard = ({
                 {
                     tags ?
                         <TagsList>
-                            <Tag>{tags}</Tag>
-                            <Tag>Action</Tag>
-                            <Tag>Action</Tag>
+                            {tags.map(({name}) => (
+                                <Tag>{name}</Tag>
+                            ))}
                         </TagsList>
                         :
                         ""
