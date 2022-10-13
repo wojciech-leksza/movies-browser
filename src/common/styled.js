@@ -13,3 +13,15 @@ export const MovieList = styled.ul`
         grid-template-columns: 1fr;
     };
 `;
+
+export const PeopleList = styled.article`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+        margin-top: 12px;
+        gap: 16px;
+    }
+`;

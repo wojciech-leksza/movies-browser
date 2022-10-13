@@ -13,7 +13,7 @@ import {
   StyledNavLink,
 } from "./styled";
 
-const Navigation = () => {
+const Navigation = ({ queryParam, setQueryParam }) => {
   return (
     <Header>
       <Wrapper>
@@ -41,7 +41,10 @@ const Navigation = () => {
             </NavListItem>
           </NavList>
         </Nav>
-        <SearchBar />
+        <SearchBar 
+          queryParam={queryParam}
+          setQueryParam={setQueryParam}
+        />
       </Wrapper>
     </Header>
   )

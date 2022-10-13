@@ -1,19 +1,16 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchMovies } from "../slice";
 import Navigation from "../../../common/Navigation";
 import Content from "./Content";
+import { useQueryParams } from "./urlParams";
 
 const MoviesPage = () => {
-  const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(fetchMovies());
-  }, []);
+  const [queryParam, setQueryParam] = useQueryParams();
 
   return (
     <>
-      <Navigation />
+      <Navigation
+        queryParam={queryParam}
+        setQueryParam={setQueryParam}
+      />
       <Content />
     </>
   )

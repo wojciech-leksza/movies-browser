@@ -2,7 +2,8 @@ import Container from "../../common/Container";
 import Navigation from "../../common/Navigation";
 import HeaderCard from "../../common/HeaderCard";
 import PersonCard from "../../common/PersonCard";
-import { Wrapper, Title } from "./styled";
+import { PeopleList } from "../../../common/styled";
+import { Title } from "./styled";
 import Header from "./Header";
 
 const MovieDetailsPage = () => {
@@ -41,7 +42,7 @@ const MovieDetailsPage = () => {
         >
         </HeaderCard>
         <Title>Cast</Title>
-        <Wrapper>
+        <PeopleList>
           <PersonCard
             pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
             name={"Liu Yifei"}
@@ -62,10 +63,10 @@ const MovieDetailsPage = () => {
             name={"Liu Yifei"}
             character={"Mulan"}
           />
-        </Wrapper>
+        </PeopleList>
 
         <Title>Crew</Title>
-        <Wrapper title={"crew"}>
+        <PeopleList>
           <PersonCard
             pictureUrl={"https://cdn.gracza.pl/galeria/mdb/o/553701140.jpg"}
             name={"Liu Yifei"}
@@ -76,7 +77,7 @@ const MovieDetailsPage = () => {
             name={"Liu Yifei"}
             character={"Mulan"}
           />
-        </Wrapper>
+        </PeopleList>
       </Container>
     </>
   );

@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as noPicture } from "./noPicture.svg";
 
-export const Card = styled.div`
+export const Card = styled(Link)`
     padding: 16px;
     width: 208px;
     background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.woodSmoke};
+    text-decoration: none;
     box-shadow: ${({ theme }) => theme.boxShadow.tile};
     display: flex;
     flex-direction: column;
