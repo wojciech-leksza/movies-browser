@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { setPage, setQuery } from "./slice";
+import { setPage, setQuery } from "../slice";
 
 export const queryParamName = "search";
 export const pageParamName = "page";
@@ -14,11 +14,10 @@ export const useQueryParams = () => {
 
     useEffect(() => {
         clearTimeout(timeout.current);
-        timeout.current = setTimeout(() => {
-            dispatch(setQuery(queryParam));
-        }, 500);
-
-    }, [queryParam]);
+            timeout.current = setTimeout(() => {
+                dispatch(setQuery(queryParam));
+            }, 500);
+    }, [queryParam, dispatch]);
 
     const setQueryParam = (query) => {
         urlParams.set(pageParamName, 1);
@@ -43,7 +42,7 @@ export const usePageParams = () => {
         if (pageParam) {
             dispatch(setPage(+pageParam));
         };
-    }, [pageParam]);
+    }, [pageParam, dispatch]);
 
     const setPageParams = (page) => {
         urlParams.set(pageParamName, page);

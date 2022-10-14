@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
 import { ReactComponent as Video } from "./Video.svg";
 
-export const Card = styled.li`
+export const Card = styled(Link)`
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -13,9 +14,9 @@ export const Card = styled.li`
     box-shadow: ${({ theme }) => theme.boxShadow.tile};
     background-color: ${({ theme: { colors } }) => colors.white};
     transition: 0.5s;
+    text-decoration: none;
 
     &:hover {
-        cursor: pointer;
         transform: translateY(-15px);
     }
 

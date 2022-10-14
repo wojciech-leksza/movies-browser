@@ -1,6 +1,33 @@
 import axios from "axios";
-import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL } from "./configAPI";
+import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL, movieDetailsUrl } from "../../core/configAPI";
 
+export const getMovieDetails = async (id) => {
+    try {
+        const response = await axios.get(`${movieDetailsUrl}/${id}`, {
+            params: {
+                api_key,
+                language,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error);
+    };  
+};
+
+export const getCredits = async (id) => {
+    try {
+        const response = await axios.get(`${movieDetailsUrl}/${id}/credits`, {
+            params: {
+                api_key,
+                language,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error(error);
+    };  
+};
 const getPopularMovies = async (page = 1) => {
     try {
         const response = await axios.get(popularMoviesUrl, {

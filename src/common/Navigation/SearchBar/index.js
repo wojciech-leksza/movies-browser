@@ -1,8 +1,6 @@
-import { useQueryParams } from "../../../features/MoviesPage/urlParams";
 import { Input, StyledIcon, Wrapper, Label } from "./styled";
 
-const SearchBar = () => {
-  const [queryParam, setQueryParam] = useQueryParams();
+const SearchBar = ({ queryParam, setQueryParam }) => {
 
   const handleQuery = ({ target }) => {
     setQueryParam(target.value);

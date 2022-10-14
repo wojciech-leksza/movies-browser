@@ -1,4 +1,4 @@
-import { moviesPath } from "../../core/App/routes";
+import { moviesPath } from "../../core/App/router";
 import { Container, Title, StyledIco, SubTitle, Button } from "./styled";
 
 const ErrorPage = () => {
