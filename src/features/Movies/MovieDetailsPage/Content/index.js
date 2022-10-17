@@ -72,7 +72,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={person.profile_path? `https://image.tmdb.org/t/p/w400${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />
@@ -85,7 +85,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={person.profile_path? `https://image.tmdb.org/t/p/w400${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />

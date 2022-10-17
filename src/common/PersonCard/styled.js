@@ -15,7 +15,6 @@ export const Card = styled(Link)`
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         max-width: 136px;
-        max-height: 245px;
         padding: 8px;
     }
 `;
@@ -26,13 +25,17 @@ export const Picture = styled.img`
 `;
 
 export const NoPictureContainer = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color:${({ theme }) => theme.colors.silver};
-    width:100%;
-    height:100%;
+    width: 100%;
+    min-height: 265px;
+
+    @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
+        min-height: 180px;
+    }
 `;
 
 export const StyledNoPicture = styled(noPicture)`
@@ -41,7 +44,8 @@ export const StyledNoPicture = styled(noPicture)`
     }
 `;
 
-export const PersonName = styled.h3`
+export const PersonName = styled.span`
+    text-align: center;
     padding: 0;
     margin: 8px 0;
     line-height: 130%;
@@ -57,6 +61,7 @@ export const PersonName = styled.h3`
 `;
 
 export const PersonCharacter = styled.span`
+    text-align: center;
     min-height: ${({ theme }) => theme.fontSizes.larger};
     font-size: ${({ theme }) => theme.fontSizes.mobileLarger};
     color: ${({ theme }) => theme.colors.darkGrey};
