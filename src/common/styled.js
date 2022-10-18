@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const MovieList = styled.ul`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 324px);
     gap: 24px;
     margin-top: 24px;
     padding: 0;
@@ -16,7 +17,6 @@ export const MovieList = styled.ul`
 
 export const PeopleList = styled.article`
     display: grid;
-    justify-items: center;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 208px);
     gap: 24px;
