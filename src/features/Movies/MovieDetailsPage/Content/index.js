@@ -39,14 +39,14 @@ const Content = ({ movie, status }) => {
             return (
                 <>
                     <Header
-                        poster={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
+                        poster={movieDetails.backdrop_path? `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`: null}
                         LongTitle={movieDetails.title}
                         rate={movieDetails.vote_average}
                         votes={movieDetails.vote_count}
                     />
                     <Container>
                         <HeaderCard
-                            imgUrl={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
+                            imgUrl={movieDetails.poster_path? `https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`: null}
                             title={movieDetails.title}
                             movieYear={movieDetails.release_date.substring(0, 4)}
 
