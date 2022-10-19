@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
-import { ReactComponent as Video } from "./Video.svg";
 
 export const Card = styled(Link)`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
     padding: 16px;
-    min-height: 650px;
-    max-width: 400px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     box-shadow: ${({ theme }) => theme.boxShadow.tile};
     background-color: ${({ theme: { colors } }) => colors.white};
@@ -21,15 +18,13 @@ export const Card = styled(Link)`
     }
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        grid-template-columns: 1fr 1fr;
-        max-width: none;
-        min-height: 201px;
+        flex-direction: row;
+        justify-content: flex-start;
     };
 `;
 
 export const Poster = styled.div`
-    width: 100%;
-    min-height: 434px;
+    max-width: 100%;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
@@ -38,23 +33,12 @@ export const Poster = styled.div`
     overflow: hidden;
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        min-height: 169px;
+        max-width: 50%;
     }; 
 `;
 
 export const PosterImage = styled.img`
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-`;
-
-export const NoPosterIcon = styled(Video)`
-    height: auto;
-    width: 64px;
-
-    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        width: 38px;
-    }; 
+    max-width: 100%;
 `;
 
 export const Content = styled.div`
