@@ -23,7 +23,7 @@ export const PeopleList = styled.article`
     margin-top: 32px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-        grid-template-columns: repeat(auto-fit, 136px);
+        grid-template-columns: repeat(auto-fill, 136px);
         margin-top: 12px;
         gap: 16px;
     }
