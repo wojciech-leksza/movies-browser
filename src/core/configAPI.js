@@ -1,11 +1,15 @@
 import myApiKey from "./api_key";
+import apiURL from "./api_url";
 
-export const popularMoviesUrl = "https://api.themoviedb.org/3/movie/popular";
-export const searchMoviesURL = "https://api.themoviedb.org/3/search/movie";
-export const popularPeopleUrl = "https://api.themoviedb.org/3/person/popular";
-export const searchPeopleUrl = "https://api.themoviedb.org/3/search/person";
-export const personDetailsUrl = "https://api.themoviedb.org/3/person";
-export const movieDetailsUrl = "https://api.themoviedb.org/3/movie";
-export const genresURL = "https://api.themoviedb.org/3/genre/movie/list";
 export const api_key = myApiKey; // yours api_key here
 export const language = "en-US";
+
+export const urls = {
+  popularMovies: `${apiURL}movie/popular`,
+  searchMovies: `${apiURL}search/movie`,
+  popularPeople: `${apiURL}person/popular`,
+  searchPeople: `${apiURL}search/person`,
+  personDetails: `${apiURL}person`,
+  movieDetails: `${apiURL}movie`,
+  genres: `${apiURL}genre/movie/list`,
+};
