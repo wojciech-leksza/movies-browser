@@ -1,9 +1,9 @@
 import axios from "axios";
-import { api_key, language, popularMoviesUrl, searchMoviesURL, genresURL, movieDetailsUrl } from "../../core/configAPI";
+import { api_key, language, urls } from "../../core/configAPI";
 
 export const getMovieDetails = async (id) => {
     try {
-        const response = await axios.get(`${movieDetailsUrl}/${id}`, {
+        const response = await axios.get(`${urls.movieDetails}/${id}`, {
             params: {
                 api_key,
                 language,
@@ -17,7 +17,7 @@ export const getMovieDetails = async (id) => {
 
 export const getCredits = async (id) => {
     try {
-        const response = await axios.get(`${movieDetailsUrl}/${id}/credits`, {
+        const response = await axios.get(`${urls.movieDetails}/${id}/credits`, {
             params: {
                 api_key,
                 language,
@@ -30,7 +30,7 @@ export const getCredits = async (id) => {
 };
 const getPopularMovies = async (page = 1) => {
     try {
-        const response = await axios.get(popularMoviesUrl, {
+        const response = await axios.get(urls.popularMovies, {
             params: {
                 api_key,
                 language,
@@ -45,7 +45,7 @@ const getPopularMovies = async (page = 1) => {
 
 const getMoviesByQuery = async (page = 1, query) => {
     try {
-        const response = await axios.get(searchMoviesURL, {
+        const response = await axios.get(urls.searchMovies, {
             params: {
                 api_key,
                 language,
@@ -69,7 +69,7 @@ export const getMovies = (page, query) => {
 
 export const getGenres = async () => {
     try {
-        const response = await axios.get(genresURL, {
+        const response = await axios.get(urls.genres, {
             params: {
                 api_key,
                 language,
