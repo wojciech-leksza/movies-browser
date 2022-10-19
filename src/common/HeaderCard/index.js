@@ -45,8 +45,8 @@ const HeaderCard = ({
             <Details>
                 <StyledTitle>{title}</StyledTitle>
                 {movieYear ? <Year>{movieYear}</Year> : null}
-                <SubTitle><Caption>{captionSubTitleFirs}:</Caption>{subTitleFirst}</SubTitle>
-                <SubTitle><Caption>{captionSubTitleSecond}:</Caption>{subTitleSecond}</SubTitle>
+                {subTitleFirst ? <SubTitle><Caption>{captionSubTitleFirs}: </Caption>{subTitleFirst}</SubTitle> : null}
+                {subTitleSecond ? <SubTitle><Caption>{captionSubTitleSecond}: </Caption>{subTitleSecond}</SubTitle> : null}
 
                 {
                     tags ?
