@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { moviesPath } from "../../core/App/router";
 import { selectGenres } from "../../features/Movies/slice";
+import noPosterImage from "./noPosterImage.png";
 import {
 	Card,
 	Content,
 	MovieTitle,
-	NoPosterIcon,
 	Poster,
 	PosterImage,
 	Rate,
@@ -23,11 +23,11 @@ const MovieCard = ({ movie }) => {
 	return (
 		<Card to={`..${moviesPath}/${movie.id}`}>
 			<Poster>
-				{movie.poster_path ? <PosterImage src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} /> : <NoPosterIcon />}
+				<PosterImage src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : noPosterImage} alt="" />
 			</Poster>
 			<Content>
 				<MovieTitle>{movie.title}</MovieTitle>
-				<YearOfProduction>{movie.release_date}</YearOfProduction>
+				<YearOfProduction>{movie.release_date ? movie.release_date.slice(0, 4) : ""}</YearOfProduction>
 				<TagsList>
 					{movie.genre_ids.map((genreId) => (
 						<Tag key={genreId}>
