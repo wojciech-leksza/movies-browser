@@ -1,5 +1,10 @@
 import { useSelector } from "react-redux";
-import { selectMovies, selectPage, selectQuery, selectStatus } from "../../slice";
+import {
+	selectMovies,
+	selectPage,
+	selectQuery,
+	selectStatus
+} from "../../slice";
 import { usePageParams } from "../urlParams";
 import { MovieList } from "../../../../common/styled";
 import LoadingPage from "../../../../common/LoadingPage";
@@ -19,7 +24,11 @@ const Content = () => {
 	switch (status) {
 		case "loading":
 			return (
-				<Container title="Searching for Movies...">
+				<Container title={
+					!query
+						? "Searching for Movies..."
+						: `Search results for "${query}"`
+				}>
 					<LoadingPage />
 				</Container>
 			);

@@ -51,7 +51,7 @@ const Content = ({ movie, status }) => {
                             movieYear={movieDetails.release_date.substring(0, 4)}
 
                             captionSubTitleFirs={"Production"}
-                            subTitleFirst={movieDetails.production_countries.map(({name}, i, {length}) => {
+                            subTitleFirst={movieDetails.production_countries.map(({ name }, i, { length }) => {
                                 if (length - 1 === i) {
                                     return name;
                                 };
