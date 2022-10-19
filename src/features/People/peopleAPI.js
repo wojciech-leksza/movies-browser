@@ -1,9 +1,9 @@
 import axios from "axios";
-import { api_key, language, genresURL, personDetailsUrl, popularPeopleUrl, searchPeopleUrl } from "../../core/configAPI";
+import { api_key, language, urls } from "../../core/configAPI";
 
 export const getPersonDetails = async (id) => {
     try {
-        const response = await axios.get(`${personDetailsUrl}/${id}`, {
+        const response = await axios.get(`${urls.personDetails}/${id}`, {
             params: {
                 api_key,
                 language,
@@ -12,12 +12,12 @@ export const getPersonDetails = async (id) => {
         return response.data;
     } catch (error) {
         throw new Error(error);
-    };  
+    };
 };
 
 export const getMovieCredits = async (id) => {
     try {
-        const response = await axios.get(`${personDetailsUrl}/${id}/movie_credits`, {
+        const response = await axios.get(`${urls.personDetails}/${id}/movie_credits`, {
             params: {
                 api_key,
                 language,
@@ -26,12 +26,12 @@ export const getMovieCredits = async (id) => {
         return response.data;
     } catch (error) {
         throw new Error(error);
-    };  
+    };
 };
 
 const getPopularPeople = async (page = 1) => {
     try {
-        const response = await axios.get(popularPeopleUrl, {
+        const response = await axios.get(urls.popularPeople, {
             params: {
                 api_key,
                 language,
@@ -41,12 +41,12 @@ const getPopularPeople = async (page = 1) => {
         return response.data;
     } catch (error) {
         throw new Error(error);
-    };  
+    };
 };
 
 const getPeopleByQuery = async (page = 1, query) => {
     try {
-        const response = await axios.get(searchPeopleUrl, {
+        const response = await axios.get(urls.searchPeople, {
             params: {
                 api_key,
                 language,
@@ -57,7 +57,7 @@ const getPeopleByQuery = async (page = 1, query) => {
         return response.data;
     } catch (error) {
         throw new Error(error);
-    };  
+    };
 };
 
 export const getPeople = (page, query) => {
@@ -71,7 +71,7 @@ export const getPeople = (page, query) => {
 
 export const getGenres = async () => {
     try {
-        const response = await axios.get(genresURL, {
+        const response = await axios.get(urls.genres, {
             params: {
                 api_key,
                 language,
@@ -80,5 +80,5 @@ export const getGenres = async () => {
         return response.data;
     } catch (error) {
         throw new Error(error);
-    };  
+    };
 };
