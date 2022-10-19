@@ -8,6 +8,7 @@ import PersonCard from "../../../../common/PersonCard";
 import { PeopleList } from "../../../../common/styled";
 import { Title } from "../styled";
 import Header from "../Header";
+import { imageURL } from "../../../../core/configAPI";
 
 const Content = ({ movie, status }) => {
     switch (status) {
@@ -39,14 +40,14 @@ const Content = ({ movie, status }) => {
             return (
                 <>
                     <Header
-                        poster={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
+                        poster={`${imageURL.backdrop}${movieDetails.backdrop_path}`}
                         LongTitle={movieDetails.title}
                         rate={movieDetails.vote_average}
                         votes={movieDetails.vote_count}
                     />
                     <Container>
                         <HeaderCard
-                            imgUrl={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
+                            imgUrl={`${imageURL.poster}${movieDetails.poster_path}`}
                             title={movieDetails.title}
                             movieYear={movieDetails.release_date.substring(0, 4)}
 
@@ -72,7 +73,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={`${imageURL.poster}${person.profile_path}`}
                                     name={person.name}
                                     character={person.character}
                                 />
@@ -85,7 +86,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={`${imageURL.poster}${person.profile_path}`}
                                     name={person.name}
                                     character={person.character}
                                 />

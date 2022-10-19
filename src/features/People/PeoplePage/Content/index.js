@@ -8,6 +8,7 @@ import Container from "../../../../common/Container";
 import Pagination from "../../../../common/Pagination";
 import PersonCard from "../../../../common/PersonCard";
 import { PeopleList } from "../../../../common/styled";
+import { imageURL } from "../../../../core/configAPI";
 
 const Content = () => {
     const people = useSelector(selectPeople);
@@ -47,7 +48,7 @@ const Content = () => {
                             <PersonCard
                                 key={person.id}
                                 link={person.id}
-                                pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                pictureUrl={`${imageURL.poster}${person.profile_path}`}
                                 name={person.name}
                             />
                         ))}

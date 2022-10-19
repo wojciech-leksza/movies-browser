@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { moviesPath } from "../../core/App/router";
 import { selectGenres } from "../../features/Movies/slice";
 import noPosterImage from "./noPosterImage.png";
+import { imageURL } from "../../core/configAPI";
 import {
 	Card,
 	Content,
@@ -23,7 +24,7 @@ const MovieCard = ({ movie }) => {
 	return (
 		<Card to={`..${moviesPath}/${movie.id}`}>
 			<Poster>
-				<PosterImage src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : noPosterImage} alt="" />
+				<PosterImage src={movie.poster_path ? `${imageURL.poster}${movie.poster_path}` : noPosterImage} alt="" />
 			</Poster>
 			<Content>
 				<MovieTitle>{movie.title}</MovieTitle>
