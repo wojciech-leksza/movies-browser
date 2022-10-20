@@ -20,7 +20,10 @@ const Content = () => {
     switch (status) {
         case "loading":
             return (
-                <Container title="Searching for People...">
+                <Container title={
+                    !query
+                        ? "Searching for People..."
+                        : `Search results for "${query}"`}>
                     <LoadingPage />
                 </Container>
             );
