@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
+	fetchMovies,
 	selectMovies,
 	selectPage,
 	selectQuery,
@@ -13,6 +14,7 @@ import NoResultPage from "../../../../common/NoResultPage";
 import Container from "../../../../common/Container";
 import MovieCard from "../../../../common/MovieCard"
 import Pagination from "../../../../common/Pagination";
+import { useEffect } from "react";
 
 const Content = () => {
 	const movies = useSelector(selectMovies);
@@ -20,6 +22,11 @@ const Content = () => {
 	const query = useSelector(selectQuery);
 	const page = useSelector(selectPage);
 	const setPageParams = usePageParams();
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchMovies());
+	}, [dispatch]);
 
 	switch (status) {
 		case "loading":
