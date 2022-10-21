@@ -1,44 +1,56 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
+import { ReactComponent as Video } from "./Video.svg";
 
 export const Card = styled(Link)`
-    display: flex;
-    flex-direction: column;
-    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
     padding: 16px;
+    min-height: 650px;
+    max-width: 400px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     box-shadow: ${({ theme }) => theme.boxShadow.tile};
     background-color: ${({ theme: { colors } }) => colors.white};
     transition: 0.5s;
     text-decoration: none;
-
     &:hover {
         transform: translateY(-15px);
     }
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        flex-direction: row;
-        justify-content: flex-start;
+        grid-template-columns: 1fr 1fr;
+        max-width: none;
+        min-height: 201px;
     };
 `;
 
 export const Poster = styled.div`
-    max-width: 100%;
+    width: 100%;
+    min-height: 434px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
     align-content: center;
     justify-content: center;
     overflow: hidden;
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        max-width: 50%;
+        min-height: 169px;
     }; 
 `;
 
 export const PosterImage = styled.img`
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+`;
+
+export const NoPosterIcon = styled(Video)`
+    height: auto;
+    width: 64px;
+    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        width: 38px;
+    }; 
 `;
 
 export const Content = styled.div`
@@ -63,7 +75,6 @@ export const YearOfProduction = styled.p`
     font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
     line-height: 1.5;
     margin: 8px 0 0 0;
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileMedium};
         margin-top: 4px;
@@ -79,7 +90,6 @@ export const TagsList = styled.ul`
     flex-wrap: wrap;
     margin: 8px 0 0 0;
     padding: 0;
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         flex-grow: 0;
     }; 
@@ -107,7 +117,6 @@ export const Rating = styled.div`
     font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
     line-height: 1.5;
     margin-top: 10px;
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         gap: 8px;
         font-size: ${({ theme: { fontSizes } }) => fontSizes.MobileMedium};
@@ -118,7 +127,6 @@ export const Rating = styled.div`
 export const RatingStar = styled(StarIcon)`
     height: auto;
     width: 24px;
-
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         width: 16px;
     }; 
