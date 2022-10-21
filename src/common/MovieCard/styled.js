@@ -18,7 +18,7 @@ export const Card = styled(Link)`
 
     &:hover {
         transform: translateY(-15px);
-    }
+    };
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         grid-template-columns: 1fr 1fr;

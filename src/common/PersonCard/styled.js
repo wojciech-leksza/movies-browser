@@ -12,6 +12,11 @@ export const Card = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s;
+    
+    &:hover {
+        transform: translateY(-15px);
+    };
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         max-width: 136px;
