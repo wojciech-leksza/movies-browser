@@ -39,14 +39,14 @@ const Content = ({ movie, status }) => {
             return (
                 <>
                     <Header
-                        poster={`https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`}
+                        poster={movieDetails.backdrop_path ? `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`: null}
                         LongTitle={movieDetails.title}
                         rate={movieDetails.vote_average}
                         votes={movieDetails.vote_count}
                     />
                     <Container>
                         <HeaderCard
-                            imgUrl={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
+                            imgUrl={movieDetails.poster_path ? `https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`: null}
                             title={movieDetails.title}
                             movieYear={movieDetails.release_date.substring(0, 4)}
 
@@ -72,7 +72,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={person.profile_path? `https://image.tmdb.org/t/p/w400${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />
@@ -85,7 +85,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                                    pictureUrl={person.profile_path? `https://image.tmdb.org/t/p/w400${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />

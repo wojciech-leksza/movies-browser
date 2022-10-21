@@ -45,8 +45,10 @@ export const PosterImage = styled.img`
 export const NoPosterIcon = styled(Video)`
     height: auto;
     width: 64px;
+    padding:156px 0;
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         width: 38px;
+        padding:64px 0;
     }; 
 `;
 

@@ -38,7 +38,7 @@ const Content = ({ person, status }) => {
         <>
           <Container>
             <HeaderCard
-              imgUrl={`https://image.tmdb.org/t/p/w400${personDetails.profile_path}`}
+              imgUrl={personDetails.profile_path? `https://image.tmdb.org/t/p/w400${personDetails.profile_path}` : null}
               title={personDetails.name}
               captionSubTitleFirs={"Date of birth"}
               subTitleFirst={personDetails.birthday}
