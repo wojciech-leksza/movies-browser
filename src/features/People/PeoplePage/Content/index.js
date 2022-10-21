@@ -13,7 +13,7 @@ import Container from "../../../../common/Container";
 import Pagination from "../../../../common/Pagination";
 import PersonCard from "../../../../common/PersonCard";
 import { PeopleList } from "../../../../common/styled";
-import { imageURL } from "../../../../core/configAPI";
+import { apiImageURL } from "../../../../core/configAPI";
 
 const Content = () => {
     const people = useSelector(selectPeople);
@@ -56,7 +56,7 @@ const Content = () => {
                             <PersonCard
                                 key={person.id}
                                 link={person.id}
-                                pictureUrl={`${imageURL.poster}${person.profile_path}`}
+                                pictureUrl={`${apiImageURL.poster}${person.profile_path}`}
                                 name={person.name}
                             />
                         ))}

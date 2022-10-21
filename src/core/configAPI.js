@@ -14,7 +14,7 @@ export const urls = {
   genres: `${apiURL}genre/movie/list`,
 };
 
-export const imageURL = {
+export const apiImageURL = {
   backdrop: `${apiPosterUrl}original`,
   poster: `${apiPosterUrl}w400`,
 };

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { moviesPath } from "../../core/App/router";
 import { selectGenres } from "../../features/Movies/slice";
-import { imageURL } from "../../core/configAPI";
+import { apiImageURL } from "../../core/configAPI";
 import {
 	Card,
 	Content,
@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
 	return (
 		<Card to={`..${moviesPath}/${movie.id}`}>
 			<Poster>
-				{movie.poster_path ? <PosterImage src={`${imageURL.poster}${movie.poster_path}`} /> : <NoPosterIcon />}
+				{movie.poster_path ? <PosterImage src={`${apiImageURL.poster}${movie.poster_path}`} /> : <NoPosterIcon />}
 			</Poster>
 			<Content>
 				<MovieTitle>{movie.title}</MovieTitle>

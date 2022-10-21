@@ -6,7 +6,7 @@ import filterDuplicatedIds from "../../../../common/filterDuplicatedIds"
 import MovieCard from "../../../../common/MovieCard";
 import HeaderCard from "../../../../common/HeaderCard";
 import { MovieList } from "../../../../common/styled";
-import { imageURL } from "../../../../core/configAPI";
+import { apiImageURL } from "../../../../core/configAPI";
 
 const Content = ({ person, status }) => {
   switch (status) {
@@ -39,7 +39,7 @@ const Content = ({ person, status }) => {
         <>
           <Container>
             <HeaderCard
-              imgUrl={`${imageURL.poster}${personDetails.profile_path}`}
+              imgUrl={`${apiImageURL.poster}${personDetails.profile_path}`}
               title={personDetails.name}
               captionSubTitleFirs={"Date of birth"}
               subTitleFirst={personDetails.birthday}
