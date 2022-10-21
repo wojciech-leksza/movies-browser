@@ -10,7 +10,7 @@ const MovieDetailsPage = () => {
   const params = useParams();
 
   useEffect(() => {
-      dispatch(fetchMovieDetails(params.id));
+    dispatch(fetchMovieDetails(params.id));
   }, [dispatch, params.id]);
 
   const status = useSelector(selectStatus);
@@ -19,7 +19,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <Navigation />
-      <Content 
+      <Content
         movie={movie}
         status={status}
       />

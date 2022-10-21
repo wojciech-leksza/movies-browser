@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
-    fetchPeople,
     selectPage,
     selectPeople,
     selectQuery,
@@ -15,7 +14,6 @@ import Pagination from "../../../../common/Pagination";
 import PersonCard from "../../../../common/PersonCard";
 import { PeopleList } from "../../../../common/styled";
 import { imageURL } from "../../../../core/configAPI";
-import { useEffect } from "react";
 
 const Content = () => {
     const people = useSelector(selectPeople);
@@ -23,11 +21,6 @@ const Content = () => {
     const query = useSelector(selectQuery);
     const page = useSelector(selectPage);
     const setPageParams = usePageParams();
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchPeople());
-    }, [dispatch]);
 
     switch (status) {
         case "loading":

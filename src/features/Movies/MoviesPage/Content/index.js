@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
-	fetchMovies,
 	selectMovies,
 	selectPage,
 	selectQuery,
@@ -21,12 +20,7 @@ const Content = () => {
 	const status = useSelector(selectStatus);
 	const query = useSelector(selectQuery);
 	const page = useSelector(selectPage);
-	const setPageParams = usePageParams();
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(fetchMovies());
-	}, [dispatch]);
+	const setPageParams = usePageParams()
 
 	switch (status) {
 		case "loading":
