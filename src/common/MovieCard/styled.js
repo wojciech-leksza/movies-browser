@@ -28,7 +28,7 @@ export const Card = styled(Link)`
 
 export const Poster = styled.div`
     width: 100%;
-    min-height: 434px;
+    height: 434px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
@@ -37,13 +37,14 @@ export const Poster = styled.div`
     overflow: hidden;
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         min-height: 169px;
+        height: auto;
     }; 
 `;
 
 export const PosterImage = styled.img`
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: fill;
 `;
 
 export const NoPosterIcon = styled(Video)`
