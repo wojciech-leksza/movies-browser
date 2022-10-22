@@ -39,7 +39,7 @@ const Content = ({ person, status }) => {
         <>
           <Container>
             <HeaderCard
-              imgUrl={`${apiImageURL.poster}${personDetails.profile_path}`}
+              imgUrl={personDetails.profile_path ? `${apiImageURL.poster}${personDetails.profile_path}` : null}
               title={personDetails.name}
               captionSubTitleFirs={"Date of birth"}
               subTitleFirst={personDetails.birthday}

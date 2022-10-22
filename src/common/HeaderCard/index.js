@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NoPosterIcon, Poster, PosterImage, } from "./styled";
 import {
     Card,
@@ -29,22 +30,29 @@ const HeaderCard = ({
     movieYear,
     overview,
 }) => {
+    const [noImg, setNoImg] = useState(false);
+
     return (
         <Card>
             <Poster>
-                <Poster>{imgUrl ? <PosterImage src={imgUrl} alt={title} /> : <NoPosterIcon />}</Poster>
+                <Poster>{!imgUrl || noImg ?
+                    <NoPosterIcon />
+                    :
+                    <PosterImage src={imgUrl} alt={title} onError={() => { setNoImg(true) }} />
+                }
+                </Poster>
             </Poster>
             <Details>
                 <StyledTitle>{title}</StyledTitle>
                 {movieYear ? <Year>{movieYear}</Year> : null}
-                <SubTitle><Caption>{captionSubTitleFirs}:</Caption> {subTitleFirst}</SubTitle>
-                <SubTitle><Caption>{captionSubTitleSecond}:</Caption> {subTitleSecond}</SubTitle>
+                {subTitleFirst ? <SubTitle><Caption>{captionSubTitleFirs}: </Caption>{subTitleFirst}</SubTitle> : null}
+                {subTitleSecond ? <SubTitle><Caption>{captionSubTitleSecond}: </Caption>{subTitleSecond}</SubTitle> : null}
 
                 {
                     tags ?
                         <TagsList>
-                            {tags.map(({name}) => (
-                                <Tag>{name}</Tag>
+                            {tags.map(({ name }) => (
+                                <Tag key={name}>{name}</Tag>
                             ))}
                         </TagsList>
                         :

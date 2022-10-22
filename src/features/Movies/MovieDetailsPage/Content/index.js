@@ -40,14 +40,14 @@ const Content = ({ movie, status }) => {
             return (
                 <>
                     <Header
-                        poster={`${apiImageURL.backdrop}${movieDetails.backdrop_path}`}
+                        poster={movieDetails.backdrop_path ? `${apiImageURL.backdrop}${movieDetails.backdrop_path}`: null}
                         LongTitle={movieDetails.title}
                         rate={movieDetails.vote_average}
                         votes={movieDetails.vote_count}
                     />
                     <Container>
                         <HeaderCard
-                            imgUrl={`${apiImageURL.poster}${movieDetails.poster_path}`}
+                            imgUrl={movieDetails.poster_path ? `${apiImageURL.poster}${movieDetails.poster_path}`: null}
                             title={movieDetails.title}
                             movieYear={movieDetails.release_date.substring(0, 4)}
 
@@ -73,7 +73,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`${apiImageURL.poster}${person.profile_path}`}
+                                    pictureUrl={person.profile_path ? `${apiImageURL.poster}${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />
@@ -86,7 +86,7 @@ const Content = ({ movie, status }) => {
                                 <PersonCard
                                     key={person.id}
                                     link={person.id}
-                                    pictureUrl={`${apiImageURL.poster}${person.profile_path}`}
+                                    pictureUrl={person.profile_path ? `${apiImageURL.poster}${person.profile_path}` : null}
                                     name={person.name}
                                     character={person.character}
                                 />

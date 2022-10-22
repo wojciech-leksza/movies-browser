@@ -56,7 +56,7 @@ const Content = () => {
                             <PersonCard
                                 key={person.id}
                                 link={person.id}
-                                pictureUrl={`${apiImageURL.poster}${person.profile_path}`}
+                                pictureUrl={person.profile_path ? `${apiImageURL.poster}${person.profile_path}` : null}
                                 name={person.name}
                             />
                         ))}

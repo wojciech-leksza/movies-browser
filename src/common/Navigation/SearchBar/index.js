@@ -1,6 +1,8 @@
+import { useLocation } from "react-router-dom";
 import { Input, StyledIcon, Wrapper, Label } from "./styled";
 
 const SearchBar = ({ queryParam, setQueryParam }) => {
+  const location = useLocation();
 
   const handleQuery = ({ target }) => {
     setQueryParam(target.value);
@@ -13,7 +15,7 @@ const SearchBar = ({ queryParam, setQueryParam }) => {
         <Input
           value={queryParam || ""}
           onChange={handleQuery}
-          placeholder="Search for movies..."
+          placeholder={`Search for ${location.pathname.split('/')[1]}...`}
         />
       </Label>
     </Wrapper>
