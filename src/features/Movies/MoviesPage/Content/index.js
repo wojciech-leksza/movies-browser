@@ -13,7 +13,6 @@ import NoResultPage from "../../../../common/NoResultPage";
 import Container from "../../../../common/Container";
 import MovieCard from "../../../../common/MovieCard"
 import Pagination from "../../../../common/Pagination";
-import { useEffect } from "react";
 
 const Content = () => {
 	const movies = useSelector(selectMovies);
@@ -25,11 +24,7 @@ const Content = () => {
 	switch (status) {
 		case "loading":
 			return (
-				<Container title={
-					!query
-						? "Searching for Movies..."
-						: `Search results for "${query}"`
-				}>
+				<Container title={!!query ? `Search results for "${query}"` : " "}>
 					<LoadingPage />
 				</Container>
 			);
