@@ -21,7 +21,6 @@ function* initHandler() {
     try {
         const response = yield call(getGenres);
         yield put(setGenres(response.genres));
-        yield put(fetchMovies());
     } catch (error) {
         yield put(fetchMoviesError());
     }
