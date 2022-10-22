@@ -36,9 +36,7 @@ const Content = () => {
                 </Container>
             );
         case "success":
-            const totalPages = people.total_pages;
-
-            if (people.results.length === 0) {
+          if (people.results.length === 0) {
                 return (
                     <Container title={`Sorry, there are no results for "${query}"`} >
                         <NoResultPage />
@@ -47,7 +45,7 @@ const Content = () => {
             };
 
             return (
-                <Container title={!!query ? `Search results for "${query}"` : "Popular People"}>
+                <Container title={!!query ? `Search results for "${query}" (${people.total_results})` : "Popular People"}>
                     <PeopleList>
                         {people.results.map((person) => (
                             <PersonCard
@@ -61,7 +59,7 @@ const Content = () => {
                     <Pagination
                         setPageParams={setPageParams}
                         page={page}
-                        totalPages={totalPages}
+                        totalPages={people.total_pages}
                     />
                 </Container>
             );

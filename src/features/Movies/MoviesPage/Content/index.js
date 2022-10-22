@@ -35,8 +35,6 @@ const Content = () => {
 				</Container>
 			);
 		case "success":
-			const totalPages = movies.total_pages;
-
 			if (movies.results.length === 0) {
 				return (
 					<Container title={`Sorry, there are no results for "${query}"`} >
@@ -46,7 +44,7 @@ const Content = () => {
 			};
 
 			return (
-				<Container title={!!query ? `Search results for "${query}"` : "Popular Movies"}>
+				<Container title={!!query ? `Search results for "${query}" (${movies.total_results})` : "Popular Movies"}>
 					<MovieList>
 						{movies.results.map((movie) => (
 							<MovieCard
@@ -58,7 +56,7 @@ const Content = () => {
 					<Pagination
 						setPageParams={setPageParams}
 						page={page}
-						totalPages={totalPages}
+						totalPages={movies.total_pages}
 					/>
 				</Container>
 			);
