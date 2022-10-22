@@ -34,7 +34,7 @@ const MovieCard = ({ movie }) => {
 			</Poster>
 			<Content>
 				<MovieTitle>{movie.title}</MovieTitle>
-				<YearOfProduction>{movie.release_date.slice(0, 4)}</YearOfProduction>
+				<YearOfProduction>{movie.release_date ? movie.release_date.slice(0, 4) : ""}</YearOfProduction>
 				<TagsList>
 					{movie.genre_ids.map((genreId) => (
 						<Tag key={genreId}>

@@ -4,8 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails, selectMovie, selectStatus } from "../slice";
 import Navigation from "../../../common/Navigation";
 import Content from "./Content";
+import { useQueryParams } from "../MoviesPage/urlParams";
 
 const MovieDetailsPage = () => {
+  const [queryParam, setQueryParam] = useQueryParams();
+  
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -18,7 +21,10 @@ const MovieDetailsPage = () => {
 
   return (
     <>
-      <Navigation />
+      <Navigation
+        queryParam={queryParam}
+        setQueryParam={setQueryParam}
+      />
       <Content
         movie={movie}
         status={status}

@@ -1,18 +1,21 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { setPage, setQuery } from "../slice";
 
 export const queryParamName = "search";
 export const pageParamName = "page";
 
 export const useQueryParams = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const [urlParams, setUrlParams] = useSearchParams();
     const queryParam = urlParams.get(queryParamName);
 
     useEffect(() => {
-        dispatch(setQuery(queryParam));
+        if (location.pathname === `/${location.pathname.split('/')[1]}`) {
+            dispatch(setQuery(queryParam));
+        };
     }, [queryParam, dispatch]);
 
     const setQueryParam = (query) => {
