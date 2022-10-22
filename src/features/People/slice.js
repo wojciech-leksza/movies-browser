@@ -13,6 +13,9 @@ const peopleSlice = createSlice({
         setQuery: (state, { payload: query }) => {
             state.query = query;
         },
+        setLoading: (state) => {
+            state.status = "loading";
+        },
         setPage: (state, { payload: page }) => {
             state.page = page;
         },
@@ -45,6 +48,7 @@ const peopleSlice = createSlice({
 
 export const {
     init,
+    setLoading,
     setQuery,
     setPage,
     fetchPersonDetails,
