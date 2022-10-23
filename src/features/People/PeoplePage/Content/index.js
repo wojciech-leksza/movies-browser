@@ -36,7 +36,11 @@ const Content = () => {
                 </Container>
             );
         case "success":
-          if (people.results.length === 0) {
+            if (!people) {
+                return;
+            };
+
+            if (people.results.length === 0) {
                 return (
                     <Container title={`Sorry, there are no results for "${query}"`} >
                         <NoResultPage />

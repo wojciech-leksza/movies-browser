@@ -35,6 +35,10 @@ const Content = () => {
 				</Container>
 			);
 		case "success":
+			if (!movies) {
+				return;
+			};
+			
 			if (movies.results.length === 0) {
 				return (
 					<Container title={`Sorry, there are no results for "${query}"`} >
