@@ -37,7 +37,7 @@ export const Poster = styled.div`
     overflow: hidden;
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         height: auto;
-        min-height: 169px;
+        aspect-ratio: 0.67;
     }; 
 `;
 
