@@ -12,6 +12,7 @@ import {
     setQuery,
     setPage,
     selectPerson,
+    setLoading,
 } from "./slice";
 
 function* fetchPeopleHandler() {
@@ -41,13 +42,19 @@ function* fetchPersonDetailsHandler() {
     };
 };
 
-function* setQueryOrPageHandler() {
+function* setPageHandler() {
+    yield put(fetchPeople());
+};
+
+function* setQueryHandler() {
+    yield put(setLoading());
+    yield delay(500);
     yield put(fetchPeople());
 };
 
 export function* peopleSaga() {
     yield takeLatest(fetchPeople.type, fetchPeopleHandler);
     yield takeLatest(fetchPersonDetails.type, fetchPersonDetailsHandler);
-    yield takeLatest(setQuery.type, setQueryOrPageHandler);
-    yield takeLatest(setPage.type, setQueryOrPageHandler);
+    yield takeLatest(setQuery.type, setQueryHandler);
+    yield takeLatest(setPage.type, setPageHandler);
 };

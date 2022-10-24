@@ -14,6 +14,7 @@ import {
     fetchMovieDetailsError,
     fetchMovieDetails,
     selectMovie,
+    setLoading,
 } from "./slice";
 
 function* initHandler() {
@@ -52,7 +53,13 @@ function* fetchMovieDetailsHandler() {
     };
 };
 
-function* setQueryOrPageHandler() {
+function* setPageHandler() {
+    yield put(fetchMovies());
+};
+
+function* setQueryHandler() {
+    yield put(setLoading());
+    yield delay(500);
     yield put(fetchMovies());
 };
 
@@ -60,6 +67,6 @@ export function* moviesSaga() {
     yield takeLatest(init.type, initHandler);
     yield takeLatest(fetchMovies.type, fetchMoviesHandler);
     yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
-    yield takeLatest(setQuery.type, setQueryOrPageHandler);
-    yield takeLatest(setPage.type, setQueryOrPageHandler);
+    yield takeLatest(setQuery.type, setQueryHandler);
+    yield takeLatest(setPage.type, setPageHandler);
 };

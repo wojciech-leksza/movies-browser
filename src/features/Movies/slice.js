@@ -12,6 +12,9 @@ const moviesSlice = createSlice({
     },
     reducers: {
         init: () => {},
+        setLoading: (state) => {
+            state.status = "loading";
+        },
         setQuery: (state, { payload: query }) => {
             state.query = query;
         },
@@ -50,6 +53,7 @@ const moviesSlice = createSlice({
 
 export const {
     init,
+    setLoading,
     setQuery,
     setPage,
     setGenres,

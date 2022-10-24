@@ -13,7 +13,6 @@ import NoResultPage from "../../../../common/NoResultPage";
 import Container from "../../../../common/Container";
 import MovieCard from "../../../../common/MovieCard"
 import Pagination from "../../../../common/Pagination";
-import { useEffect } from "react";
 
 const Content = () => {
 	const movies = useSelector(selectMovies);
@@ -25,11 +24,7 @@ const Content = () => {
 	switch (status) {
 		case "loading":
 			return (
-				<Container title={
-					!query
-						? "Searching for Movies..."
-						: `Search results for "${query}"`
-				}>
+				<Container title={!!query ? `Search results for "${query}"` : " "}>
 					<LoadingPage />
 				</Container>
 			);
@@ -40,8 +35,10 @@ const Content = () => {
 				</Container>
 			);
 		case "success":
-			const totalPages = movies.total_pages;
-
+			if (!movies) {
+				return;
+			};
+			
 			if (movies.results.length === 0) {
 				return (
 					<Container title={`Sorry, there are no results for "${query}"`} >
@@ -51,7 +48,7 @@ const Content = () => {
 			};
 
 			return (
-				<Container title={!!query ? `Search results for "${query}"` : "Popular Movies"}>
+				<Container title={!!query ? `Search results for "${query}" (${movies.total_results})` : "Popular Movies"}>
 					<MovieList>
 						{movies.results.map((movie) => (
 							<MovieCard
@@ -63,7 +60,7 @@ const Content = () => {
 					<Pagination
 						setPageParams={setPageParams}
 						page={page}
-						totalPages={totalPages}
+						totalPages={movies.total_pages}
 					/>
 				</Container>
 			);

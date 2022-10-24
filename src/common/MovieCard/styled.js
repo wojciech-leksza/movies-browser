@@ -4,12 +4,11 @@ import { ReactComponent as StarIcon } from "./starIcon.svg";
 import { ReactComponent as Video } from "./Video.svg";
 
 export const Card = styled(Link)`
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     padding: 16px;
     min-height: 650px;
-    max-width: 400px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     box-shadow: ${({ theme }) => theme.boxShadow.tile};
     background-color: ${({ theme: { colors } }) => colors.white};
@@ -20,6 +19,7 @@ export const Card = styled(Link)`
     };
 
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         max-width: none;
         min-height: 201px;
@@ -28,7 +28,7 @@ export const Card = styled(Link)`
 
 export const Poster = styled.div`
     width: 100%;
-    min-height: 434px;
+    height: 434px;
     border-radius: ${({ theme }) => theme.borderRadius.small};
     background-color: ${({ theme: { colors } }) => colors.silver};
     display: flex;
@@ -36,13 +36,13 @@ export const Poster = styled.div`
     justify-content: center;
     overflow: hidden;
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        min-height: 169px;
+        height: auto;
+        aspect-ratio: 0.67;
     }; 
 `;
 
 export const PosterImage = styled.img`
     width: 100%;
-    height: auto;
     object-fit: cover;
 `;
 
@@ -56,6 +56,8 @@ export const NoPosterIcon = styled(Video)`
 
 export const Content = styled.div`
     display: flex;
+    gap: 8px;
+    flex-grow: 1;
     flex-direction: column;
 `;
 
@@ -75,29 +77,24 @@ export const YearOfProduction = styled.p`
     color: ${({ theme: { colors } }) => colors.darkGrey};
     font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
     line-height: 1.5;
-    margin: 8px 0 0 0;
+    margin: 0;
+
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileMedium};
-        margin-top: 4px;
     }; 
 `;
 
 export const TagsList = styled.ul`
-    flex-grow: 1;
     align-content: flex-start;
     list-style: none;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin: 8px 0 0 0;
+    margin: 0;
     padding: 0;
-    @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
-        flex-grow: 0;
-    }; 
 `;
 
 export const Tag = styled.li`
-    align-self: flex-start;
     color: ${({ theme: { colors } }) => colors.black};
     font-size: ${({ theme: { fontSizes } }) => fontSizes.small};
     line-height: 1.4;
@@ -112,16 +109,16 @@ export const Tag = styled.li`
 `;
 
 export const Rating = styled.div`
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     font-size: ${({ theme: { fontSizes } }) => fontSizes.medium};
     line-height: 1.5;
-    margin-top: 10px;
     @media screen and (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         gap: 8px;
         font-size: ${({ theme: { fontSizes } }) => fontSizes.MobileMedium};
-        margin-top: 8px;
+        margin: 0;
     }; 
 `;
 

@@ -25,10 +25,7 @@ const Content = () => {
     switch (status) {
         case "loading":
             return (
-                <Container title={
-                    !query
-                        ? "Searching for People..."
-                        : `Search results for "${query}"`}>
+                <Container title={!!query ? `Search results for "${query}"` : " "}>
                     <LoadingPage />
                 </Container>
             );
@@ -39,7 +36,9 @@ const Content = () => {
                 </Container>
             );
         case "success":
-            const totalPages = people.total_pages;
+            if (!people) {
+                return;
+            };
 
             if (people.results.length === 0) {
                 return (
@@ -50,7 +49,7 @@ const Content = () => {
             };
 
             return (
-                <Container title={!!query ? `Search results for "${query}"` : "Popular People"}>
+                <Container title={!!query ? `Search results for "${query}" (${people.total_results})` : "Popular People"}>
                     <PeopleList>
                         {people.results.map((person) => (
                             <PersonCard
@@ -64,7 +63,7 @@ const Content = () => {
                     <Pagination
                         setPageParams={setPageParams}
                         page={page}
-                        totalPages={totalPages}
+                        totalPages={people.total_pages}
                     />
                 </Container>
             );
