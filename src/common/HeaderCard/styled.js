@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as Video } from "./Video.svg";
+import { ReactComponent as Video } from "./video.svg";
+import { ReactComponent as Person } from "./person.svg";
 import { ReactComponent as StarIcon } from "./starIcon.svg";
 
 export const Card = styled.article`
@@ -17,7 +18,7 @@ export const Card = styled.article`
         grid-template-columns: 135px auto;
         gap: 8px 16px;
         padding: 16px;
-    }
+    };
 `;
 
 export const Poster = styled.div`
@@ -33,7 +34,7 @@ export const Poster = styled.div`
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         min-width:90px;
         grid-row-start: 1;
-    }
+    };
 `;
 
 export const PosterImage = styled.img`
@@ -42,14 +43,26 @@ export const PosterImage = styled.img`
     border-radius: ${({ theme }) => theme.borderRadius.small};
 `;
 
-export const NoPosterIcon = styled(Video)`
+export const NoMoviPosterIcon = styled(Video)`
     height: auto;
     width: 64px;
-    padding:156px 0;
+    padding: 156px 0;
+
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         width: 38px;
-        padding:64px 0;
-    }; 
+        padding: 64px 0;
+    };
+`;
+
+export const NoPersonPosterIcon = styled(Person)`
+    height: auto;
+    width: 64px;
+    padding: 156px 0;
+
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
+        width: 38px;
+        padding: 64px 0;
+    };
 `;
 
 export const Details = styled.div`
@@ -96,15 +109,15 @@ export const SubTitle = styled.div`
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         grid-column: 1 / 3;
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileMedium};
-    }
-`
+    };
+`;
 
 export const Caption = styled.span`
     color: ${({ theme }) => theme.colors.darkGrey};
 
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         display: none;
-    }
+    };
 `;
 
 export const Overview = styled.div`
@@ -114,12 +127,12 @@ export const Overview = styled.div`
 
     @media (max-width:${({ theme }) => theme.breakpoints.tabletMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.mobileLarge};
-    }
+    };
     
     @media (max-width:${({ theme }) => theme.breakpoints.mobileMax}px) {
         font-size: ${({ theme: { fontSizes } }) => fontSizes.small};
         grid-column: 1 / 3;
-    }
+    };
 `;
 
 export const TagsList = styled.ul`
@@ -183,7 +196,7 @@ export const SecondaryText = styled.span`
     @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.mobileMax}px) {
         display: none;
     }; 
-`
+`;
 
 export const Rate = styled.p`
     font-weight: 600;

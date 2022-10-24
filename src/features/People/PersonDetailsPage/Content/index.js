@@ -46,6 +46,7 @@ const Content = ({ person, status }) => {
               captionSubTitleSecond={"Place of birth"}
               subTitleSecond={personDetails.place_of_birth}
               overview={personDetails.biography}
+              person={true}
             />
           </Container>
           <Container title={`Movies-cast (${cast.length})`}>
