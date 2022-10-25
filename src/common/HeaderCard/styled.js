@@ -43,7 +43,7 @@ export const PosterImage = styled.img`
     border-radius: ${({ theme }) => theme.borderRadius.small};
 `;
 
-export const NoMoviPosterIcon = styled(Video)`
+export const NoMoviePosterIcon = styled(Video)`
     height: auto;
     width: 64px;
     padding: 156px 0;

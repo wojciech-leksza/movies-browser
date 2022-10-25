@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NoMoviPosterIcon, NoPersonPosterIcon, Poster, PosterImage, } from "./styled";
+import { NoMoviePosterIcon, NoPersonPosterIcon, Poster, PosterImage, } from "./styled";
 import {
     Card,
     Details,
@@ -37,7 +37,7 @@ const HeaderCard = ({
         <Card>
             <Poster>
                 <Poster>{!imgUrl || noImg ?
-                    person ? <NoPersonPosterIcon /> : <NoMoviPosterIcon />
+                    person ? <NoPersonPosterIcon /> : <NoMoviePosterIcon />
                     :
                     <PosterImage src={imgUrl} alt={title} onError={() => { setNoImg(true) }} />
                 }
