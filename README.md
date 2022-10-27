@@ -10,7 +10,7 @@
 
 ## Demo
 
-https://galerafrontend.github.io/Movies-browser/
+https://wojciech-leksza.github.io/Movies-browser/
 ## General info
 
 ## How it works?
